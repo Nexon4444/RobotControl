@@ -2,11 +2,8 @@ package gen;// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotCon
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class robotControlParser extends Parser {
@@ -110,21 +107,20 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_script; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterScript(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterScript(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitScript(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitScript(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitScript(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitScript(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final ScriptContext script() throws RecognitionException {
-		System.out.println("asdasd");
 		ScriptContext _localctx = new ScriptContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_script);
 		int _la;
@@ -186,19 +182,19 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ifStment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterIfStment(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterIfStment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitIfStment(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitIfStment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitIfStment(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitIfStment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
-///////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public final IfStmentContext ifStment() throws RecognitionException {
 		IfStmentContext _localctx = new IfStmentContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_ifStment);
@@ -330,15 +326,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_whileStment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterWhileStment(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterWhileStment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitWhileStment(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitWhileStment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitWhileStment(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitWhileStment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -428,15 +424,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_stment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterStment(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterStment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitStment(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitStment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitStment(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitStment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -520,15 +516,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_robotStmentDouble; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterRobotStmentDouble(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterRobotStmentDouble(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitRobotStmentDouble(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitRobotStmentDouble(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentDouble(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentDouble(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -594,15 +590,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_robotStmentInt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterRobotStmentInt(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterRobotStmentInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitRobotStmentInt(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitRobotStmentInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentInt(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -667,15 +663,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mathExpr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterMathExpr(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterMathExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitMathExpr(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitMathExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitMathExpr(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitMathExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -745,15 +741,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mathExprInt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterMathExprInt(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterMathExprInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitMathExprInt(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitMathExprInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitMathExprInt(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitMathExprInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -851,15 +847,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mathExprDouble; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterMathExprDouble(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterMathExprDouble(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitMathExprDouble(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitMathExprDouble(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitMathExprDouble(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitMathExprDouble(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -942,15 +938,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterExpr(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitExpr(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitExpr(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -996,15 +992,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignement(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignement(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignement(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1069,15 +1065,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignementInt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignementInt(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignementInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignementInt(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignementInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignementInt(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignementInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1144,15 +1140,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignementString; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignementString(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignementString(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignementString(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignementString(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignementString(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignementString(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1199,15 +1195,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_initiailizeRobot; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterInitiailizeRobot(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterInitiailizeRobot(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitInitiailizeRobot(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitInitiailizeRobot(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitInitiailizeRobot(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitInitiailizeRobot(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1260,15 +1256,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignementDouble; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignementDouble(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignementDouble(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignementDouble(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignementDouble(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignementDouble(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignementDouble(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1333,15 +1329,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_relOp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterRelOp(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterRelOp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitRelOp(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitRelOp(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitRelOp(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitRelOp(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1387,15 +1383,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_varType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterVarType(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterVarType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitVarType(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitVarType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitVarType(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitVarType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1438,15 +1434,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_varName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterVarName(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterVarName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitVarName(this);
+			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitVarName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitVarName(this);
+			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitVarName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
