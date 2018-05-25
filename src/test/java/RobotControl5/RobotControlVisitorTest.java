@@ -3,8 +3,6 @@ package RobotControl5;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import exceptions.VariableUndeclaredException;
-import gen.robotControlLexer;
-import gen.robotControlParser;
 import org.antlr.v4.runtime.*;
 import org.junit.jupiter.api.Test;
 

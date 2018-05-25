@@ -1,9 +1,13 @@
-package gen;// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotControl.g4 by ANTLR 4.7
+// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotControl.g4 by ANTLR 4.7
+package gen;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class robotControlParser extends Parser {
@@ -22,14 +26,17 @@ public class robotControlParser extends Parser {
 	public static final int
 		RULE_script = 0, RULE_ifStment = 1, RULE_whileStment = 2, RULE_stment = 3, 
 		RULE_robotStmentDouble = 4, RULE_robotStmentInt = 5, RULE_mathExpr = 6, 
-		RULE_mathExprInt = 7, RULE_mathExprDouble = 8, RULE_expr = 9, RULE_assignement = 10, 
-		RULE_assignementInt = 11, RULE_assignementString = 12, RULE_initiailizeRobot = 13, 
-		RULE_assignementDouble = 14, RULE_relOp = 15, RULE_varType = 16, RULE_varName = 17;
+		RULE_mathExprInt = 7, RULE_mathExprDouble = 8, RULE_expr = 9, RULE_declaration = 10, 
+		RULE_declarationInt = 11, RULE_declarationString = 12, RULE_declarationDouble = 13, 
+		RULE_assignement = 14, RULE_assignementInt = 15, RULE_assignementString = 16, 
+		RULE_initiailizeRobot = 17, RULE_assignementDouble = 18, RULE_relOp = 19, 
+		RULE_varType = 20;
 	public static final String[] ruleNames = {
 		"script", "ifStment", "whileStment", "stment", "robotStmentDouble", "robotStmentInt", 
-		"mathExpr", "mathExprInt", "mathExprDouble", "expr", "assignement", "assignementInt", 
+		"mathExpr", "mathExprInt", "mathExprDouble", "expr", "declaration", "declarationInt", 
+		"declarationString", "declarationDouble", "assignement", "assignementInt", 
 		"assignementString", "initiailizeRobot", "assignementDouble", "relOp", 
-		"varType", "varName"
+		"varType"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -107,15 +114,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_script; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterScript(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterScript(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitScript(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitScript(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitScript(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitScript(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -127,17 +134,17 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(39);
+			setState(45);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
 				{
 				{
-				setState(36);
+				setState(42);
 				stment();
 				}
 				}
-				setState(41);
+				setState(47);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -182,15 +189,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ifStment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterIfStment(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterIfStment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitIfStment(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitIfStment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitIfStment(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitIfStment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -200,38 +207,38 @@ public class robotControlParser extends Parser {
 		enterRule(_localctx, 2, RULE_ifStment);
 		int _la;
 		try {
-			setState(77);
+			setState(83);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				{
-				setState(42);
+				setState(48);
 				match(IF);
-				setState(43);
+				setState(49);
 				match(LNBRACKET);
-				setState(44);
-				expr();
-				setState(45);
-				match(RNBRACKET);
-				setState(46);
-				match(LCBRACKET);
 				setState(50);
+				expr();
+				setState(51);
+				match(RNBRACKET);
+				setState(52);
+				match(LCBRACKET);
+				setState(56);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
 					{
 					{
-					setState(47);
+					setState(53);
 					stment();
 					}
 					}
-					setState(52);
+					setState(58);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(53);
+				setState(59);
 				match(RCBRACKET);
 				}
 				}
@@ -240,51 +247,51 @@ public class robotControlParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				{
-				setState(55);
+				setState(61);
 				match(IF);
-				setState(56);
+				setState(62);
 				match(LNBRACKET);
-				setState(57);
-				expr();
-				setState(58);
-				match(RNBRACKET);
-				setState(59);
-				match(LCBRACKET);
 				setState(63);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
-					{
-					{
-					setState(60);
-					stment();
-					}
-					}
-					setState(65);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(66);
-				match(RCBRACKET);
-				setState(67);
-				match(ELSE);
-				setState(68);
+				expr();
+				setState(64);
+				match(RNBRACKET);
+				setState(65);
 				match(LCBRACKET);
-				setState(72);
+				setState(69);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
 					{
 					{
-					setState(69);
+					setState(66);
 					stment();
 					}
 					}
-					setState(74);
+					setState(71);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(75);
+				setState(72);
+				match(RCBRACKET);
+				setState(73);
+				match(ELSE);
+				setState(74);
+				match(LCBRACKET);
+				setState(78);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
+					{
+					{
+					setState(75);
+					stment();
+					}
+					}
+					setState(80);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				setState(81);
 				match(RCBRACKET);
 				}
 				}
@@ -326,15 +333,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_whileStment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterWhileStment(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterWhileStment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitWhileStment(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitWhileStment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitWhileStment(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitWhileStment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -346,45 +353,45 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79);
+			setState(85);
 			match(WHILE);
-			setState(80);
+			setState(86);
 			match(LNBRACKET);
-			setState(83);
+			setState(89);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				{
-				setState(81);
+				setState(87);
 				expr();
 				}
 				break;
 			case 2:
 				{
-				setState(82);
+				setState(88);
 				mathExpr();
 				}
 				break;
 			}
-			setState(85);
+			setState(91);
 			match(RNBRACKET);
-			setState(86);
+			setState(92);
 			match(LCBRACKET);
-			setState(90);
+			setState(96);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
 				{
 				{
-				setState(87);
+				setState(93);
 				stment();
 				}
 				}
-				setState(92);
+				setState(98);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(93);
+			setState(99);
 			match(RCBRACKET);
 			}
 		}
@@ -415,6 +422,9 @@ public class robotControlParser extends Parser {
 		public AssignementContext assignement() {
 			return getRuleContext(AssignementContext.class,0);
 		}
+		public DeclarationContext declaration() {
+			return getRuleContext(DeclarationContext.class,0);
+		}
 		public InitiailizeRobotContext initiailizeRobot() {
 			return getRuleContext(InitiailizeRobotContext.class,0);
 		}
@@ -424,15 +434,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_stment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterStment(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterStment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitStment(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitStment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitStment(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitStment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -441,48 +451,55 @@ public class robotControlParser extends Parser {
 		StmentContext _localctx = new StmentContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_stment);
 		try {
-			setState(101);
+			setState(108);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(95);
+				setState(101);
 				ifStment();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(96);
+				setState(102);
 				whileStment();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(97);
+				setState(103);
 				robotStmentDouble();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(98);
+				setState(104);
 				robotStmentInt();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(99);
+				setState(105);
 				assignement();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(100);
+				setState(106);
+				declaration();
+				}
+				break;
+			case 7:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(107);
 				initiailizeRobot();
 				}
 				break;
@@ -516,15 +533,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_robotStmentDouble; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterRobotStmentDouble(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterRobotStmentDouble(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitRobotStmentDouble(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitRobotStmentDouble(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentDouble(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentDouble(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -536,11 +553,11 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(103);
+			setState(110);
 			match(VARNAME);
-			setState(104);
+			setState(111);
 			match(DOT);
-			setState(105);
+			setState(112);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LEFT) | (1L << RIGHT) | (1L << FRONT) | (1L << BACK))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -550,13 +567,13 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(106);
+			setState(113);
 			match(LNBRACKET);
-			setState(107);
+			setState(114);
 			match(DOUBLE);
-			setState(108);
+			setState(115);
 			match(RNBRACKET);
-			setState(109);
+			setState(116);
 			match(SEMICOLON);
 			}
 		}
@@ -572,7 +589,10 @@ public class robotControlParser extends Parser {
 	}
 
 	public static class RobotStmentIntContext extends ParserRuleContext {
-		public TerminalNode VARNAME() { return getToken(robotControlParser.VARNAME, 0); }
+		public List<TerminalNode> VARNAME() { return getTokens(robotControlParser.VARNAME); }
+		public TerminalNode VARNAME(int i) {
+			return getToken(robotControlParser.VARNAME, i);
+		}
 		public TerminalNode DOT() { return getToken(robotControlParser.DOT, 0); }
 		public TerminalNode SETSPEED() { return getToken(robotControlParser.SETSPEED, 0); }
 		public TerminalNode LNBRACKET() { return getToken(robotControlParser.LNBRACKET, 0); }
@@ -581,24 +601,21 @@ public class robotControlParser extends Parser {
 		public MathExprContext mathExpr() {
 			return getRuleContext(MathExprContext.class,0);
 		}
-		public VarNameContext varName() {
-			return getRuleContext(VarNameContext.class,0);
-		}
 		public RobotStmentIntContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_robotStmentInt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterRobotStmentInt(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterRobotStmentInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitRobotStmentInt(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitRobotStmentInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentInt(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitRobotStmentInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -609,33 +626,33 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(111);
+			setState(118);
 			match(VARNAME);
-			setState(112);
+			setState(119);
 			match(DOT);
-			setState(113);
+			setState(120);
 			match(SETSPEED);
-			setState(114);
+			setState(121);
 			match(LNBRACKET);
-			setState(117);
+			setState(124);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				{
-				setState(115);
+				setState(122);
 				mathExpr();
 				}
 				break;
 			case 2:
 				{
-				setState(116);
-				varName();
+				setState(123);
+				match(VARNAME);
 				}
 				break;
 			}
-			setState(119);
+			setState(126);
 			match(RNBRACKET);
-			setState(120);
+			setState(127);
 			match(SEMICOLON);
 			}
 		}
@@ -663,15 +680,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mathExpr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterMathExpr(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterMathExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitMathExpr(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitMathExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitMathExpr(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitMathExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -680,20 +697,20 @@ public class robotControlParser extends Parser {
 		MathExprContext _localctx = new MathExprContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_mathExpr);
 		try {
-			setState(124);
+			setState(131);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(122);
+				setState(129);
 				mathExprDouble();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(123);
+				setState(130);
 				mathExprInt();
 				}
 				break;
@@ -741,15 +758,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mathExprInt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterMathExprInt(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterMathExprInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitMathExprInt(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitMathExprInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitMathExprInt(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitMathExprInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -761,7 +778,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(126);
+			setState(133);
 			_la = _input.LA(1);
 			if ( !(_la==INT || _la==VARNAME) ) {
 			_errHandler.recoverInline(this);
@@ -771,13 +788,13 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(131);
+			setState(138);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) {
 				{
 				{
-				setState(127);
+				setState(134);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) ) {
 				_errHandler.recoverInline(this);
@@ -787,7 +804,7 @@ public class robotControlParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(128);
+				setState(135);
 				_la = _input.LA(1);
 				if ( !(_la==INT || _la==VARNAME) ) {
 				_errHandler.recoverInline(this);
@@ -799,7 +816,7 @@ public class robotControlParser extends Parser {
 				}
 				}
 				}
-				setState(133);
+				setState(140);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -847,15 +864,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mathExprDouble; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterMathExprDouble(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterMathExprDouble(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitMathExprDouble(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitMathExprDouble(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitMathExprDouble(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitMathExprDouble(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -867,7 +884,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(134);
+			setState(141);
 			_la = _input.LA(1);
 			if ( !(_la==VARNAME || _la==DOUBLE) ) {
 			_errHandler.recoverInline(this);
@@ -877,13 +894,13 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(139);
+			setState(146);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) {
 				{
 				{
-				setState(135);
+				setState(142);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) ) {
 				_errHandler.recoverInline(this);
@@ -893,7 +910,7 @@ public class robotControlParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(136);
+				setState(143);
 				_la = _input.LA(1);
 				if ( !(_la==VARNAME || _la==DOUBLE) ) {
 				_errHandler.recoverInline(this);
@@ -905,7 +922,7 @@ public class robotControlParser extends Parser {
 				}
 				}
 				}
-				setState(141);
+				setState(148);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -938,15 +955,15 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterExpr(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitExpr(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitExpr(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -957,11 +974,11 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(142);
+			setState(149);
 			mathExpr();
-			setState(143);
+			setState(150);
 			relOp();
-			setState(144);
+			setState(151);
 			mathExpr();
 			}
 		}
@@ -976,61 +993,61 @@ public class robotControlParser extends Parser {
 		return _localctx;
 	}
 
-	public static class AssignementContext extends ParserRuleContext {
-		public AssignementDoubleContext assignementDouble() {
-			return getRuleContext(AssignementDoubleContext.class,0);
+	public static class DeclarationContext extends ParserRuleContext {
+		public DeclarationIntContext declarationInt() {
+			return getRuleContext(DeclarationIntContext.class,0);
 		}
-		public AssignementStringContext assignementString() {
-			return getRuleContext(AssignementStringContext.class,0);
+		public DeclarationStringContext declarationString() {
+			return getRuleContext(DeclarationStringContext.class,0);
 		}
-		public AssignementIntContext assignementInt() {
-			return getRuleContext(AssignementIntContext.class,0);
+		public DeclarationDoubleContext declarationDouble() {
+			return getRuleContext(DeclarationDoubleContext.class,0);
 		}
-		public AssignementContext(ParserRuleContext parent, int invokingState) {
+		public DeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_assignement; }
+		@Override public int getRuleIndex() { return RULE_declaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignement(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignement(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignement(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final AssignementContext assignement() throws RecognitionException {
-		AssignementContext _localctx = new AssignementContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_assignement);
+	public final DeclarationContext declaration() throws RecognitionException {
+		DeclarationContext _localctx = new DeclarationContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_declaration);
 		try {
-			setState(149);
+			setState(156);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case VARDOUBLE:
+			case VARINT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(146);
-				assignementDouble();
+				setState(153);
+				declarationInt();
 				}
 				break;
 			case VARSTRING:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(147);
-				assignementString();
+				setState(154);
+				declarationString();
 				}
 				break;
-			case VARINT:
+			case VARDOUBLE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(148);
-				assignementInt();
+				setState(155);
+				declarationDouble();
 				}
 				break;
 			default:
@@ -1048,7 +1065,7 @@ public class robotControlParser extends Parser {
 		return _localctx;
 	}
 
-	public static class AssignementIntContext extends ParserRuleContext {
+	public static class DeclarationIntContext extends ParserRuleContext {
 		public TerminalNode VARINT() { return getToken(robotControlParser.VARINT, 0); }
 		public List<TerminalNode> VARNAME() { return getTokens(robotControlParser.VARNAME); }
 		public TerminalNode VARNAME(int i) {
@@ -1059,59 +1076,59 @@ public class robotControlParser extends Parser {
 			return getRuleContext(MathExprIntContext.class,0);
 		}
 		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
-		public AssignementIntContext(ParserRuleContext parent, int invokingState) {
+		public DeclarationIntContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_assignementInt; }
+		@Override public int getRuleIndex() { return RULE_declarationInt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignementInt(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterDeclarationInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignementInt(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitDeclarationInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignementInt(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitDeclarationInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final AssignementIntContext assignementInt() throws RecognitionException {
-		AssignementIntContext _localctx = new AssignementIntContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_assignementInt);
+	public final DeclarationIntContext declarationInt() throws RecognitionException {
+		DeclarationIntContext _localctx = new DeclarationIntContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_declarationInt);
 		try {
-			setState(162);
+			setState(169);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(151);
+				setState(158);
 				match(VARINT);
-				setState(152);
+				setState(159);
 				match(VARNAME);
-				setState(153);
+				setState(160);
 				match(OPASSIGN);
-				setState(154);
+				setState(161);
 				mathExprInt();
-				setState(155);
+				setState(162);
 				match(SEMICOLON);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(157);
+				setState(164);
 				match(VARINT);
-				setState(158);
+				setState(165);
 				match(VARNAME);
-				setState(159);
+				setState(166);
 				match(OPASSIGN);
-				setState(160);
+				setState(167);
 				match(VARNAME);
-				setState(161);
+				setState(168);
 				match(SEMICOLON);
 				}
 				break;
@@ -1128,102 +1145,45 @@ public class robotControlParser extends Parser {
 		return _localctx;
 	}
 
-	public static class AssignementStringContext extends ParserRuleContext {
+	public static class DeclarationStringContext extends ParserRuleContext {
 		public TerminalNode VARSTRING() { return getToken(robotControlParser.VARSTRING, 0); }
 		public TerminalNode VARNAME() { return getToken(robotControlParser.VARNAME, 0); }
 		public TerminalNode OPASSIGN() { return getToken(robotControlParser.OPASSIGN, 0); }
 		public TerminalNode STRING() { return getToken(robotControlParser.STRING, 0); }
 		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
-		public AssignementStringContext(ParserRuleContext parent, int invokingState) {
+		public DeclarationStringContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_assignementString; }
+		@Override public int getRuleIndex() { return RULE_declarationString; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignementString(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterDeclarationString(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignementString(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitDeclarationString(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignementString(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitDeclarationString(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final AssignementStringContext assignementString() throws RecognitionException {
-		AssignementStringContext _localctx = new AssignementStringContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_assignementString);
+	public final DeclarationStringContext declarationString() throws RecognitionException {
+		DeclarationStringContext _localctx = new DeclarationStringContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_declarationString);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(164);
-			match(VARSTRING);
-			setState(165);
-			match(VARNAME);
-			setState(166);
-			match(OPASSIGN);
-			setState(167);
-			match(STRING);
-			setState(168);
-			match(SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class InitiailizeRobotContext extends ParserRuleContext {
-		public TerminalNode VARROBOT() { return getToken(robotControlParser.VARROBOT, 0); }
-		public TerminalNode VARNAME() { return getToken(robotControlParser.VARNAME, 0); }
-		public TerminalNode LNBRACKET() { return getToken(robotControlParser.LNBRACKET, 0); }
-		public TerminalNode STRING() { return getToken(robotControlParser.STRING, 0); }
-		public TerminalNode RNBRACKET() { return getToken(robotControlParser.RNBRACKET, 0); }
-		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
-		public InitiailizeRobotContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_initiailizeRobot; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterInitiailizeRobot(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitInitiailizeRobot(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitInitiailizeRobot(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final InitiailizeRobotContext initiailizeRobot() throws RecognitionException {
-		InitiailizeRobotContext _localctx = new InitiailizeRobotContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_initiailizeRobot);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(170);
-			match(VARROBOT);
 			setState(171);
-			match(VARNAME);
+			match(VARSTRING);
 			setState(172);
-			match(LNBRACKET);
+			match(VARNAME);
 			setState(173);
-			match(STRING);
+			match(OPASSIGN);
 			setState(174);
-			match(RNBRACKET);
+			match(STRING);
 			setState(175);
 			match(SEMICOLON);
 			}
@@ -1239,7 +1199,7 @@ public class robotControlParser extends Parser {
 		return _localctx;
 	}
 
-	public static class AssignementDoubleContext extends ParserRuleContext {
+	public static class DeclarationDoubleContext extends ParserRuleContext {
 		public TerminalNode VARDOUBLE() { return getToken(robotControlParser.VARDOUBLE, 0); }
 		public List<TerminalNode> VARNAME() { return getTokens(robotControlParser.VARNAME); }
 		public TerminalNode VARNAME(int i) {
@@ -1250,28 +1210,28 @@ public class robotControlParser extends Parser {
 			return getRuleContext(MathExprDoubleContext.class,0);
 		}
 		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
-		public AssignementDoubleContext(ParserRuleContext parent, int invokingState) {
+		public DeclarationDoubleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_assignementDouble; }
+		@Override public int getRuleIndex() { return RULE_declarationDouble; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterAssignementDouble(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterDeclarationDouble(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitAssignementDouble(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitDeclarationDouble(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitAssignementDouble(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitDeclarationDouble(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final AssignementDoubleContext assignementDouble() throws RecognitionException {
-		AssignementDoubleContext _localctx = new AssignementDoubleContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_assignementDouble);
+	public final DeclarationDoubleContext declarationDouble() throws RecognitionException {
+		DeclarationDoubleContext _localctx = new DeclarationDoubleContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_declarationDouble);
 		try {
 			setState(188);
 			_errHandler.sync(this);
@@ -1319,6 +1279,334 @@ public class robotControlParser extends Parser {
 		return _localctx;
 	}
 
+	public static class AssignementContext extends ParserRuleContext {
+		public AssignementDoubleContext assignementDouble() {
+			return getRuleContext(AssignementDoubleContext.class,0);
+		}
+		public AssignementStringContext assignementString() {
+			return getRuleContext(AssignementStringContext.class,0);
+		}
+		public AssignementIntContext assignementInt() {
+			return getRuleContext(AssignementIntContext.class,0);
+		}
+		public AssignementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assignement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssignementContext assignement() throws RecognitionException {
+		AssignementContext _localctx = new AssignementContext(_ctx, getState());
+		enterRule(_localctx, 28, RULE_assignement);
+		try {
+			setState(193);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(190);
+				assignementDouble();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(191);
+				assignementString();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(192);
+				assignementInt();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AssignementIntContext extends ParserRuleContext {
+		public List<TerminalNode> VARNAME() { return getTokens(robotControlParser.VARNAME); }
+		public TerminalNode VARNAME(int i) {
+			return getToken(robotControlParser.VARNAME, i);
+		}
+		public TerminalNode OPASSIGN() { return getToken(robotControlParser.OPASSIGN, 0); }
+		public MathExprIntContext mathExprInt() {
+			return getRuleContext(MathExprIntContext.class,0);
+		}
+		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
+		public AssignementIntContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assignementInt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignementInt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignementInt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignementInt(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssignementIntContext assignementInt() throws RecognitionException {
+		AssignementIntContext _localctx = new AssignementIntContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_assignementInt);
+		try {
+			setState(204);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(195);
+				match(VARNAME);
+				setState(196);
+				match(OPASSIGN);
+				setState(197);
+				mathExprInt();
+				setState(198);
+				match(SEMICOLON);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(200);
+				match(VARNAME);
+				setState(201);
+				match(OPASSIGN);
+				setState(202);
+				match(VARNAME);
+				setState(203);
+				match(SEMICOLON);
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AssignementStringContext extends ParserRuleContext {
+		public TerminalNode VARNAME() { return getToken(robotControlParser.VARNAME, 0); }
+		public TerminalNode OPASSIGN() { return getToken(robotControlParser.OPASSIGN, 0); }
+		public TerminalNode STRING() { return getToken(robotControlParser.STRING, 0); }
+		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
+		public AssignementStringContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assignementString; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignementString(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignementString(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignementString(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssignementStringContext assignementString() throws RecognitionException {
+		AssignementStringContext _localctx = new AssignementStringContext(_ctx, getState());
+		enterRule(_localctx, 32, RULE_assignementString);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(206);
+			match(VARNAME);
+			setState(207);
+			match(OPASSIGN);
+			setState(208);
+			match(STRING);
+			setState(209);
+			match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class InitiailizeRobotContext extends ParserRuleContext {
+		public TerminalNode VARROBOT() { return getToken(robotControlParser.VARROBOT, 0); }
+		public TerminalNode VARNAME() { return getToken(robotControlParser.VARNAME, 0); }
+		public TerminalNode LNBRACKET() { return getToken(robotControlParser.LNBRACKET, 0); }
+		public TerminalNode STRING() { return getToken(robotControlParser.STRING, 0); }
+		public TerminalNode RNBRACKET() { return getToken(robotControlParser.RNBRACKET, 0); }
+		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
+		public InitiailizeRobotContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_initiailizeRobot; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterInitiailizeRobot(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitInitiailizeRobot(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitInitiailizeRobot(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final InitiailizeRobotContext initiailizeRobot() throws RecognitionException {
+		InitiailizeRobotContext _localctx = new InitiailizeRobotContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_initiailizeRobot);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(211);
+			match(VARROBOT);
+			setState(212);
+			match(VARNAME);
+			setState(213);
+			match(LNBRACKET);
+			setState(214);
+			match(STRING);
+			setState(215);
+			match(RNBRACKET);
+			setState(216);
+			match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AssignementDoubleContext extends ParserRuleContext {
+		public List<TerminalNode> VARNAME() { return getTokens(robotControlParser.VARNAME); }
+		public TerminalNode VARNAME(int i) {
+			return getToken(robotControlParser.VARNAME, i);
+		}
+		public TerminalNode OPASSIGN() { return getToken(robotControlParser.OPASSIGN, 0); }
+		public MathExprDoubleContext mathExprDouble() {
+			return getRuleContext(MathExprDoubleContext.class,0);
+		}
+		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
+		public AssignementDoubleContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assignementDouble; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterAssignementDouble(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitAssignementDouble(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitAssignementDouble(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssignementDoubleContext assignementDouble() throws RecognitionException {
+		AssignementDoubleContext _localctx = new AssignementDoubleContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_assignementDouble);
+		try {
+			setState(227);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(218);
+				match(VARNAME);
+				setState(219);
+				match(OPASSIGN);
+				setState(220);
+				mathExprDouble();
+				setState(221);
+				match(SEMICOLON);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(223);
+				match(VARNAME);
+				setState(224);
+				match(OPASSIGN);
+				setState(225);
+				match(VARNAME);
+				setState(226);
+				match(SEMICOLON);
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static class RelOpContext extends ParserRuleContext {
 		public TerminalNode OPGREATER() { return getToken(robotControlParser.OPGREATER, 0); }
 		public TerminalNode OPSMALLER() { return getToken(robotControlParser.OPSMALLER, 0); }
@@ -1329,27 +1617,27 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_relOp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterRelOp(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterRelOp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitRelOp(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitRelOp(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitRelOp(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitRelOp(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final RelOpContext relOp() throws RecognitionException {
 		RelOpContext _localctx = new RelOpContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_relOp);
+		enterRule(_localctx, 38, RULE_relOp);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(190);
+			setState(229);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPGREATER) | (1L << OPSMALLER) | (1L << OPEQUAL))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1383,27 +1671,27 @@ public class robotControlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_varType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterVarType(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).enterVarType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitVarType(this);
+			if ( listener instanceof robotControlListener ) ((robotControlListener)listener).exitVarType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitVarType(this);
+			if ( visitor instanceof robotControlVisitor ) return ((robotControlVisitor<? extends T>)visitor).visitVarType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final VarTypeContext varType() throws RecognitionException {
 		VarTypeContext _localctx = new VarTypeContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_varType);
+		enterRule(_localctx, 40, RULE_varType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(192);
+			setState(231);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1426,107 +1714,80 @@ public class robotControlParser extends Parser {
 		return _localctx;
 	}
 
-	public static class VarNameContext extends ParserRuleContext {
-		public TerminalNode VARNAME() { return getToken(robotControlParser.VARNAME, 0); }
-		public VarNameContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_varName; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).enterVarName(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof robotControlListener) ((robotControlListener)listener).exitVarName(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof robotControlVisitor) return ((robotControlVisitor<? extends T>)visitor).visitVarName(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VarNameContext varName() throws RecognitionException {
-		VarNameContext _localctx = new VarNameContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_varName);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(194);
-			match(VARNAME);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3$\u00c7\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3$\u00ec\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\3\2\7\2(\n\2\f\2\16\2+\13\2\3\3\3\3\3\3\3\3\3\3\3\3\7\3\63"+
-		"\n\3\f\3\16\3\66\13\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3@\n\3\f\3\16"+
-		"\3C\13\3\3\3\3\3\3\3\3\3\7\3I\n\3\f\3\16\3L\13\3\3\3\3\3\5\3P\n\3\3\4"+
-		"\3\4\3\4\3\4\5\4V\n\4\3\4\3\4\3\4\7\4[\n\4\f\4\16\4^\13\4\3\4\3\4\3\5"+
-		"\3\5\3\5\3\5\3\5\3\5\5\5h\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7"+
-		"\3\7\3\7\3\7\3\7\5\7x\n\7\3\7\3\7\3\7\3\b\3\b\5\b\177\n\b\3\t\3\t\3\t"+
-		"\7\t\u0084\n\t\f\t\16\t\u0087\13\t\3\n\3\n\3\n\7\n\u008c\n\n\f\n\16\n"+
-		"\u008f\13\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f\u0098\n\f\3\r\3\r\3\r"+
-		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00a5\n\r\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20"+
-		"\3\20\3\20\3\20\3\20\3\20\5\20\u00bf\n\20\3\21\3\21\3\22\3\22\3\23\3\23"+
-		"\3\23\2\2\24\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$\2\b\3\2\7\n\3"+
-		"\2\37 \3\2\21\24\4\2  \"\"\3\2\25\27\3\2\32\35\2\u00c8\2)\3\2\2\2\4O\3"+
-		"\2\2\2\6Q\3\2\2\2\bg\3\2\2\2\ni\3\2\2\2\fq\3\2\2\2\16~\3\2\2\2\20\u0080"+
-		"\3\2\2\2\22\u0088\3\2\2\2\24\u0090\3\2\2\2\26\u0097\3\2\2\2\30\u00a4\3"+
-		"\2\2\2\32\u00a6\3\2\2\2\34\u00ac\3\2\2\2\36\u00be\3\2\2\2 \u00c0\3\2\2"+
-		"\2\"\u00c2\3\2\2\2$\u00c4\3\2\2\2&(\5\b\5\2\'&\3\2\2\2(+\3\2\2\2)\'\3"+
-		"\2\2\2)*\3\2\2\2*\3\3\2\2\2+)\3\2\2\2,-\7\4\2\2-.\7\r\2\2./\5\24\13\2"+
-		"/\60\7\16\2\2\60\64\7\13\2\2\61\63\5\b\5\2\62\61\3\2\2\2\63\66\3\2\2\2"+
-		"\64\62\3\2\2\2\64\65\3\2\2\2\65\67\3\2\2\2\66\64\3\2\2\2\678\7\f\2\28"+
-		"P\3\2\2\29:\7\4\2\2:;\7\r\2\2;<\5\24\13\2<=\7\16\2\2=A\7\13\2\2>@\5\b"+
-		"\5\2?>\3\2\2\2@C\3\2\2\2A?\3\2\2\2AB\3\2\2\2BD\3\2\2\2CA\3\2\2\2DE\7\f"+
-		"\2\2EF\7\5\2\2FJ\7\13\2\2GI\5\b\5\2HG\3\2\2\2IL\3\2\2\2JH\3\2\2\2JK\3"+
-		"\2\2\2KM\3\2\2\2LJ\3\2\2\2MN\7\f\2\2NP\3\2\2\2O,\3\2\2\2O9\3\2\2\2P\5"+
-		"\3\2\2\2QR\7\6\2\2RU\7\r\2\2SV\5\24\13\2TV\5\16\b\2US\3\2\2\2UT\3\2\2"+
-		"\2VW\3\2\2\2WX\7\16\2\2X\\\7\13\2\2Y[\5\b\5\2ZY\3\2\2\2[^\3\2\2\2\\Z\3"+
-		"\2\2\2\\]\3\2\2\2]_\3\2\2\2^\\\3\2\2\2_`\7\f\2\2`\7\3\2\2\2ah\5\4\3\2"+
-		"bh\5\6\4\2ch\5\n\6\2dh\5\f\7\2eh\5\26\f\2fh\5\34\17\2ga\3\2\2\2gb\3\2"+
-		"\2\2gc\3\2\2\2gd\3\2\2\2ge\3\2\2\2gf\3\2\2\2h\t\3\2\2\2ij\7 \2\2jk\7\3"+
-		"\2\2kl\t\2\2\2lm\7\r\2\2mn\7\"\2\2no\7\16\2\2op\7\31\2\2p\13\3\2\2\2q"+
-		"r\7 \2\2rs\7\3\2\2st\7\36\2\2tw\7\r\2\2ux\5\16\b\2vx\5$\23\2wu\3\2\2\2"+
-		"wv\3\2\2\2xy\3\2\2\2yz\7\16\2\2z{\7\31\2\2{\r\3\2\2\2|\177\5\22\n\2}\177"+
-		"\5\20\t\2~|\3\2\2\2~}\3\2\2\2\177\17\3\2\2\2\u0080\u0085\t\3\2\2\u0081"+
-		"\u0082\t\4\2\2\u0082\u0084\t\3\2\2\u0083\u0081\3\2\2\2\u0084\u0087\3\2"+
-		"\2\2\u0085\u0083\3\2\2\2\u0085\u0086\3\2\2\2\u0086\21\3\2\2\2\u0087\u0085"+
-		"\3\2\2\2\u0088\u008d\t\5\2\2\u0089\u008a\t\4\2\2\u008a\u008c\t\5\2\2\u008b"+
-		"\u0089\3\2\2\2\u008c\u008f\3\2\2\2\u008d\u008b\3\2\2\2\u008d\u008e\3\2"+
-		"\2\2\u008e\23\3\2\2\2\u008f\u008d\3\2\2\2\u0090\u0091\5\16\b\2\u0091\u0092"+
-		"\5 \21\2\u0092\u0093\5\16\b\2\u0093\25\3\2\2\2\u0094\u0098\5\36\20\2\u0095"+
-		"\u0098\5\32\16\2\u0096\u0098\5\30\r\2\u0097\u0094\3\2\2\2\u0097\u0095"+
-		"\3\2\2\2\u0097\u0096\3\2\2\2\u0098\27\3\2\2\2\u0099\u009a\7\32\2\2\u009a"+
-		"\u009b\7 \2\2\u009b\u009c\7\30\2\2\u009c\u009d\5\20\t\2\u009d\u009e\7"+
-		"\31\2\2\u009e\u00a5\3\2\2\2\u009f\u00a0\7\32\2\2\u00a0\u00a1\7 \2\2\u00a1"+
-		"\u00a2\7\30\2\2\u00a2\u00a3\7 \2\2\u00a3\u00a5\7\31\2\2\u00a4\u0099\3"+
-		"\2\2\2\u00a4\u009f\3\2\2\2\u00a5\31\3\2\2\2\u00a6\u00a7\7\34\2\2\u00a7"+
-		"\u00a8\7 \2\2\u00a8\u00a9\7\30\2\2\u00a9\u00aa\7!\2\2\u00aa\u00ab\7\31"+
-		"\2\2\u00ab\33\3\2\2\2\u00ac\u00ad\7\33\2\2\u00ad\u00ae\7 \2\2\u00ae\u00af"+
-		"\7\r\2\2\u00af\u00b0\7!\2\2\u00b0\u00b1\7\16\2\2\u00b1\u00b2\7\31\2\2"+
-		"\u00b2\35\3\2\2\2\u00b3\u00b4\7\35\2\2\u00b4\u00b5\7 \2\2\u00b5\u00b6"+
-		"\7\30\2\2\u00b6\u00b7\5\22\n\2\u00b7\u00b8\7\31\2\2\u00b8\u00bf\3\2\2"+
-		"\2\u00b9\u00ba\7\35\2\2\u00ba\u00bb\7 \2\2\u00bb\u00bc\7\30\2\2\u00bc"+
-		"\u00bd\7 \2\2\u00bd\u00bf\7\31\2\2\u00be\u00b3\3\2\2\2\u00be\u00b9\3\2"+
-		"\2\2\u00bf\37\3\2\2\2\u00c0\u00c1\t\6\2\2\u00c1!\3\2\2\2\u00c2\u00c3\t"+
-		"\7\2\2\u00c3#\3\2\2\2\u00c4\u00c5\7 \2\2\u00c5%\3\2\2\2\21)\64AJOU\\g"+
-		"w~\u0085\u008d\u0097\u00a4\u00be";
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\3\2\7\2.\n\2\f\2\16\2\61\13\2"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\7\39\n\3\f\3\16\3<\13\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\7\3F\n\3\f\3\16\3I\13\3\3\3\3\3\3\3\3\3\7\3O\n\3\f\3\16\3R"+
+		"\13\3\3\3\3\3\5\3V\n\3\3\4\3\4\3\4\3\4\5\4\\\n\4\3\4\3\4\3\4\7\4a\n\4"+
+		"\f\4\16\4d\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5o\n\5\3\6\3\6\3"+
+		"\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7\177\n\7\3\7\3\7\3\7"+
+		"\3\b\3\b\5\b\u0086\n\b\3\t\3\t\3\t\7\t\u008b\n\t\f\t\16\t\u008e\13\t\3"+
+		"\n\3\n\3\n\7\n\u0093\n\n\f\n\16\n\u0096\13\n\3\13\3\13\3\13\3\13\3\f\3"+
+		"\f\3\f\5\f\u009f\n\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00ac"+
+		"\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
+		"\3\17\3\17\3\17\3\17\5\17\u00bf\n\17\3\20\3\20\3\20\5\20\u00c4\n\20\3"+
+		"\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\5\21\u00cf\n\21\3\22\3\22"+
+		"\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\24"+
+		"\3\24\3\24\3\24\3\24\3\24\5\24\u00e6\n\24\3\25\3\25\3\26\3\26\3\26\2\2"+
+		"\27\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*\2\b\3\2\7\n\3\2\37 "+
+		"\3\2\21\24\4\2  \"\"\3\2\25\27\3\2\32\35\2\u00ef\2/\3\2\2\2\4U\3\2\2\2"+
+		"\6W\3\2\2\2\bn\3\2\2\2\np\3\2\2\2\fx\3\2\2\2\16\u0085\3\2\2\2\20\u0087"+
+		"\3\2\2\2\22\u008f\3\2\2\2\24\u0097\3\2\2\2\26\u009e\3\2\2\2\30\u00ab\3"+
+		"\2\2\2\32\u00ad\3\2\2\2\34\u00be\3\2\2\2\36\u00c3\3\2\2\2 \u00ce\3\2\2"+
+		"\2\"\u00d0\3\2\2\2$\u00d5\3\2\2\2&\u00e5\3\2\2\2(\u00e7\3\2\2\2*\u00e9"+
+		"\3\2\2\2,.\5\b\5\2-,\3\2\2\2.\61\3\2\2\2/-\3\2\2\2/\60\3\2\2\2\60\3\3"+
+		"\2\2\2\61/\3\2\2\2\62\63\7\4\2\2\63\64\7\r\2\2\64\65\5\24\13\2\65\66\7"+
+		"\16\2\2\66:\7\13\2\2\679\5\b\5\28\67\3\2\2\29<\3\2\2\2:8\3\2\2\2:;\3\2"+
+		"\2\2;=\3\2\2\2<:\3\2\2\2=>\7\f\2\2>V\3\2\2\2?@\7\4\2\2@A\7\r\2\2AB\5\24"+
+		"\13\2BC\7\16\2\2CG\7\13\2\2DF\5\b\5\2ED\3\2\2\2FI\3\2\2\2GE\3\2\2\2GH"+
+		"\3\2\2\2HJ\3\2\2\2IG\3\2\2\2JK\7\f\2\2KL\7\5\2\2LP\7\13\2\2MO\5\b\5\2"+
+		"NM\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QS\3\2\2\2RP\3\2\2\2ST\7\f\2\2"+
+		"TV\3\2\2\2U\62\3\2\2\2U?\3\2\2\2V\5\3\2\2\2WX\7\6\2\2X[\7\r\2\2Y\\\5\24"+
+		"\13\2Z\\\5\16\b\2[Y\3\2\2\2[Z\3\2\2\2\\]\3\2\2\2]^\7\16\2\2^b\7\13\2\2"+
+		"_a\5\b\5\2`_\3\2\2\2ad\3\2\2\2b`\3\2\2\2bc\3\2\2\2ce\3\2\2\2db\3\2\2\2"+
+		"ef\7\f\2\2f\7\3\2\2\2go\5\4\3\2ho\5\6\4\2io\5\n\6\2jo\5\f\7\2ko\5\36\20"+
+		"\2lo\5\26\f\2mo\5$\23\2ng\3\2\2\2nh\3\2\2\2ni\3\2\2\2nj\3\2\2\2nk\3\2"+
+		"\2\2nl\3\2\2\2nm\3\2\2\2o\t\3\2\2\2pq\7 \2\2qr\7\3\2\2rs\t\2\2\2st\7\r"+
+		"\2\2tu\7\"\2\2uv\7\16\2\2vw\7\31\2\2w\13\3\2\2\2xy\7 \2\2yz\7\3\2\2z{"+
+		"\7\36\2\2{~\7\r\2\2|\177\5\16\b\2}\177\7 \2\2~|\3\2\2\2~}\3\2\2\2\177"+
+		"\u0080\3\2\2\2\u0080\u0081\7\16\2\2\u0081\u0082\7\31\2\2\u0082\r\3\2\2"+
+		"\2\u0083\u0086\5\22\n\2\u0084\u0086\5\20\t\2\u0085\u0083\3\2\2\2\u0085"+
+		"\u0084\3\2\2\2\u0086\17\3\2\2\2\u0087\u008c\t\3\2\2\u0088\u0089\t\4\2"+
+		"\2\u0089\u008b\t\3\2\2\u008a\u0088\3\2\2\2\u008b\u008e\3\2\2\2\u008c\u008a"+
+		"\3\2\2\2\u008c\u008d\3\2\2\2\u008d\21\3\2\2\2\u008e\u008c\3\2\2\2\u008f"+
+		"\u0094\t\5\2\2\u0090\u0091\t\4\2\2\u0091\u0093\t\5\2\2\u0092\u0090\3\2"+
+		"\2\2\u0093\u0096\3\2\2\2\u0094\u0092\3\2\2\2\u0094\u0095\3\2\2\2\u0095"+
+		"\23\3\2\2\2\u0096\u0094\3\2\2\2\u0097\u0098\5\16\b\2\u0098\u0099\5(\25"+
+		"\2\u0099\u009a\5\16\b\2\u009a\25\3\2\2\2\u009b\u009f\5\30\r\2\u009c\u009f"+
+		"\5\32\16\2\u009d\u009f\5\34\17\2\u009e\u009b\3\2\2\2\u009e\u009c\3\2\2"+
+		"\2\u009e\u009d\3\2\2\2\u009f\27\3\2\2\2\u00a0\u00a1\7\32\2\2\u00a1\u00a2"+
+		"\7 \2\2\u00a2\u00a3\7\30\2\2\u00a3\u00a4\5\20\t\2\u00a4\u00a5\7\31\2\2"+
+		"\u00a5\u00ac\3\2\2\2\u00a6\u00a7\7\32\2\2\u00a7\u00a8\7 \2\2\u00a8\u00a9"+
+		"\7\30\2\2\u00a9\u00aa\7 \2\2\u00aa\u00ac\7\31\2\2\u00ab\u00a0\3\2\2\2"+
+		"\u00ab\u00a6\3\2\2\2\u00ac\31\3\2\2\2\u00ad\u00ae\7\34\2\2\u00ae\u00af"+
+		"\7 \2\2\u00af\u00b0\7\30\2\2\u00b0\u00b1\7!\2\2\u00b1\u00b2\7\31\2\2\u00b2"+
+		"\33\3\2\2\2\u00b3\u00b4\7\35\2\2\u00b4\u00b5\7 \2\2\u00b5\u00b6\7\30\2"+
+		"\2\u00b6\u00b7\5\22\n\2\u00b7\u00b8\7\31\2\2\u00b8\u00bf\3\2\2\2\u00b9"+
+		"\u00ba\7\35\2\2\u00ba\u00bb\7 \2\2\u00bb\u00bc\7\30\2\2\u00bc\u00bd\7"+
+		" \2\2\u00bd\u00bf\7\31\2\2\u00be\u00b3\3\2\2\2\u00be\u00b9\3\2\2\2\u00bf"+
+		"\35\3\2\2\2\u00c0\u00c4\5&\24\2\u00c1\u00c4\5\"\22\2\u00c2\u00c4\5 \21"+
+		"\2\u00c3\u00c0\3\2\2\2\u00c3\u00c1\3\2\2\2\u00c3\u00c2\3\2\2\2\u00c4\37"+
+		"\3\2\2\2\u00c5\u00c6\7 \2\2\u00c6\u00c7\7\30\2\2\u00c7\u00c8\5\20\t\2"+
+		"\u00c8\u00c9\7\31\2\2\u00c9\u00cf\3\2\2\2\u00ca\u00cb\7 \2\2\u00cb\u00cc"+
+		"\7\30\2\2\u00cc\u00cd\7 \2\2\u00cd\u00cf\7\31\2\2\u00ce\u00c5\3\2\2\2"+
+		"\u00ce\u00ca\3\2\2\2\u00cf!\3\2\2\2\u00d0\u00d1\7 \2\2\u00d1\u00d2\7\30"+
+		"\2\2\u00d2\u00d3\7!\2\2\u00d3\u00d4\7\31\2\2\u00d4#\3\2\2\2\u00d5\u00d6"+
+		"\7\33\2\2\u00d6\u00d7\7 \2\2\u00d7\u00d8\7\r\2\2\u00d8\u00d9\7!\2\2\u00d9"+
+		"\u00da\7\16\2\2\u00da\u00db\7\31\2\2\u00db%\3\2\2\2\u00dc\u00dd\7 \2\2"+
+		"\u00dd\u00de\7\30\2\2\u00de\u00df\5\22\n\2\u00df\u00e0\7\31\2\2\u00e0"+
+		"\u00e6\3\2\2\2\u00e1\u00e2\7 \2\2\u00e2\u00e3\7\30\2\2\u00e3\u00e4\7 "+
+		"\2\2\u00e4\u00e6\7\31\2\2\u00e5\u00dc\3\2\2\2\u00e5\u00e1\3\2\2\2\u00e6"+
+		"\'\3\2\2\2\u00e7\u00e8\t\6\2\2\u00e8)\3\2\2\2\u00e9\u00ea\t\7\2\2\u00ea"+
+		"+\3\2\2\2\24/:GPU[bn~\u0085\u008c\u0094\u009e\u00ab\u00be\u00c3\u00ce"+
+		"\u00e5";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

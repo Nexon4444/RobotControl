@@ -1,10 +1,8 @@
 package RobotControl5;
 
-import gen.robotControlLexer;
-import gen.robotControlParser;
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.*;
-
+import gen.*;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.Arrays;
