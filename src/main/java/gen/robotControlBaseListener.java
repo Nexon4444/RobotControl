@@ -1,4 +1,4 @@
-// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotControl.g4 by ANTLR 4.7
+// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5/gen/gen\robotControl.g4 by ANTLR 4.7
 package gen;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -262,6 +262,54 @@ public class robotControlBaseListener implements robotControlListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVarType(robotControlParser.VarTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarInt(robotControlParser.VarIntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarInt(robotControlParser.VarIntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarDouble(robotControlParser.VarDoubleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarDouble(robotControlParser.VarDoubleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarRobot(robotControlParser.VarRobotContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarRobot(robotControlParser.VarRobotContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarName(robotControlParser.VarNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarName(robotControlParser.VarNameContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

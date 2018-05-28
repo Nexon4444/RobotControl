@@ -17,12 +17,13 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
     @Override
     public Var visitStment(robotControlParser.StmentContext ctx) {
         System.out.println("visited visitStment");
-        if (ctx.ifStment() != null) return visitIfStment(ctx.ifStment());
-        if (ctx.whileStment() != null) return visitWhileStment(ctx.whileStment());
-        if (ctx.robotStmentDouble() != null) return visitRobotStmentDouble(ctx.robotStmentDouble());
-        if (ctx.robotStmentInt() != null) return visitRobotStmentInt(ctx.robotStmentInt());
-        if (ctx.assignement() != null) return visitAssignement(ctx.assignement());
-        if (ctx.initiailizeRobot() != null) return visitInitiailizeRobot(ctx.initiailizeRobot());
+        if (ctx.ifStment() != null) visitIfStment(ctx.ifStment());
+        if (ctx.whileStment() != null) visitWhileStment(ctx.whileStment());
+        if (ctx.robotStmentDouble() != null) visitRobotStmentDouble(ctx.robotStmentDouble());
+        if (ctx.robotStmentInt() != null) visitRobotStmentInt(ctx.robotStmentInt());
+        if (ctx.assignement() != null) visitAssignement(ctx.assignement());
+        if (ctx.declaration() != null) visitDeclaration(ctx.declaration());
+        if (ctx.initiailizeRobot() != null) visitInitiailizeRobot(ctx.initiailizeRobot());
         return null;
     }
 
@@ -30,7 +31,11 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
     public Var visitScript(robotControlParser.ScriptContext ctx) {
         System.out.println("visited ctx: " + ctx);
         for (int i = 0; i < ctx.stment().size(); i++)
+        {
+            System.out.println("ScriptContext: " + ctx.stment(i).getText());
             visitStment(ctx.stment(i));
+        }
+
         return null;
 
     }
@@ -46,21 +51,40 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitWhileStment(robotControlParser.WhileStmentContext ctx) {
-        return super.visitWhileStment(ctx);
+        if(ctx.expr() != null) visitExpr(ctx.expr());
+//        if(ctx.mathExpr() != null) visitMathExpr(ctx.mathExpr());
+        for (int i = 0; i < ctx.stment().size(); i++)
+            visitStment(ctx.stment(i));
+        return null;
     }
 
     @Override
     public Var visitRobotStmentDouble(robotControlParser.RobotStmentDoubleContext ctx) {
 
-        if (!varsHashMap.containsKey(ctx.VARNAME()))
-            throw new VariableUndeclaredException("Variable " + ctx.VARNAME() + " undeclared");
+        for (int i = 0; i < ctx.VARNAME().size(); i++)
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
+                throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
+
+        for (int i = 0; i < ctx.VARNAME().size(); i++)
+            if (varsHashMap.get(ctx.VARNAME(i).getText()).getType() != Type.DOUBLE)
+                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.INT.toString());
+
+        if (ctx.mathExprDouble() != null) visitMathExprDouble(ctx.mathExprDouble());
+        return null;
     }
 
     @Override
     public Var visitRobotStmentInt(robotControlParser.RobotStmentIntContext ctx) {
-        if (!varsHashMap.containsKey(ctx.VARNAME()))
-            throw new VariableUndeclaredException("Variable " + ctx.VARNAME() + " undeclared");
-        if (ctx.mathExpr()!= null) visitMathExpr(ctx.mathExpr());
+        for (int i = 0; i < ctx.VARNAME().size(); i++)
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
+                throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
+
+        for (int i = 0; i < ctx.VARNAME().size(); i++)
+            if (varsHashMap.get(ctx.VARNAME(i).getText()).getType() != Type.INT)
+                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.INT.toString());
+
+        if (ctx.mathExpr() != null) visitMathExpr(ctx.mathExpr());
+        return null;
     }
 
     @Override
@@ -73,13 +97,18 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitMathExprInt(robotControlParser.MathExprIntContext ctx) {
+        System.out.println("MathExprIntContext: " + ctx.getText());
         for (int i = 0; i < ctx.VARNAME().size(); i++)
-            if (!varsHashMap.containsKey(ctx.VARNAME(i)))
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
+            {
+                System.out.println(ctx.VARNAME(i).getText());
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
+            }
+
 
         for (int i = 0; i < ctx.VARNAME().size(); i++)
             if (varsHashMap.get(ctx.VARNAME(i).getText()).getType() != Type.INT)
-                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.INT.toString())
+                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.INT.toString());
         //if (!varsHashMap.containsKey(ctx.VARNAME(1))) throw new VariableUndeclaredException("Variable " + ctx.VARNAME(1) + " undeclared");
         return null;
     }
@@ -87,12 +116,12 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
     @Override
     public Var visitMathExprDouble(robotControlParser.MathExprDoubleContext ctx) {
         for (int i = 0; i < ctx.VARNAME().size(); i++)
-            if (!varsHashMap.containsKey(ctx.VARNAME(i)))
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
 
         for (int i = 0; i < ctx.VARNAME().size(); i++)
             if (varsHashMap.get(ctx.VARNAME(i).getText()).getType() != Type.DOUBLE)
-                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.DOUBLE.toString())
+                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.DOUBLE.toString());
 
         //if (!varsHashMap.containsKey(ctx.VARNAME(1))) throw new VariableUndeclaredException("Variable " + ctx.VARNAME(1) + " undeclared");
         return null;
@@ -100,9 +129,9 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitExpr(robotControlParser.ExprContext ctx) {
-        if (ctx.mathExpr(0) != null) visitMathExpr(ctx.mathExpr(0));
+        if (ctx.mathExprInt(0) != null) visitMathExprInt(ctx.mathExprInt(0));
         if (ctx.relOp() != null) visitRelOp(ctx.relOp());
-        if (ctx.mathExpr(1) != null) visitMathExpr(ctx.mathExpr(1));
+        if (ctx.mathExprInt(1) != null) visitMathExprInt(ctx.mathExprInt(1));
       /*  if(!varsHashMap.containsKey(ctx..getText()))
             throw new VariableUndeclaredException("Variable: " + ctx.VARIABLE_NAME(i).getText() +
                     " is not declared.");
@@ -128,21 +157,25 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
     @Override
     public Var visitAssignementInt(robotControlParser.AssignementIntContext ctx) {
         if (ctx.VARNAME(1) != null) System.out.println("VARNAME(0): " + ctx.VARNAME(0).getText().toString() +
-                "VARNAME(1): " + ctx.VARNAME(1).getText().toString());
+                "VARNAME(1): " + ctx.VARNAME(1).getText());
 
         for (int i = 0; i < ctx.VARNAME().size(); i++)
-            if (!varsHashMap.containsKey(ctx.VARNAME(i)))
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
 
         if (ctx.mathExprInt() != null) visitMathExprInt(ctx.mathExprInt());
         System.out.println("Varname 0: " + ctx.VARNAME(0).getText().toString());
-        varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.INT, ctx.VARNAME(0).getText(), false));
+//        varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.INT, ctx.VARNAME(0).getText(), false));
 
         return null; //varsHashMap.get(ctx.VARNAME(0).getText());
     }
 
     @Override
     public Var visitAssignementString(robotControlParser.AssignementStringContext ctx) {
+
+        if (!varsHashMap.containsKey(ctx.VARNAME().getText()))
+            throw new VariableUndeclaredException("Variable " + ctx.VARNAME() + " undeclared");
+
         return null;
     }
 
@@ -152,14 +185,21 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
         if (varsHashMap.containsKey(ctx.VARNAME().getText()))
             throw new MultipleVariableDeclarationException("Variable: " + ctx.VARNAME().getText() +
                     " is already declared.");
+        System.out.println("InitiailizeRobotContext.VARNAME: " + ctx.VARNAME());
+        if (ctx.VARNAME()!= null)
+            if (varsHashMap.get(ctx.VARNAME().getText()).getType() != Type.STRING)
+                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME() + " is not of type " + Type.STRING.toString());
+        return null;
     }
 
     @Override
     public Var visitAssignementDouble(robotControlParser.AssignementDoubleContext ctx) {
         for (int i = 0; i < ctx.VARNAME().size(); i++)
-            if (!varsHashMap.containsKey(ctx.VARNAME(i)))
-                throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
-        return super.visitAssignementDouble(ctx);
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
+                throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i).getText() + " undeclared");
+
+
+        return null;
     }
 
     @Override
@@ -187,8 +227,11 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
             throw new MultipleVariableDeclarationException("Variable: " + ctx.VARNAME(0).getText() +
                     " is already declared.");
 
-        if (ctx.mathExprInt() != null) return visitMathExprInt(ctx.mathExprInt());
-
+        if (ctx.mathExprInt() != null) visitMathExprInt(ctx.mathExprInt());
+        for (int i = 1; i < ctx.VARNAME().size(); i++) {
+            if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
+                throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i).getText() + " undeclared");
+        }
         varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.INT, ctx.VARNAME(0).getText(), false));
 
         return null; //varsHashMap.get(ctx.VARNAME(0).getText());
@@ -202,12 +245,11 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
 //        if(ctx.() != null) return visitMathExprInt(ctx.mathExprInt());
 
-        varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.STRING, ctx.VARNAME().getText(), false));
+        varsHashMap.put(ctx.VARNAME().getText(), new Var(Type.STRING, ctx.VARNAME().getText(), false));
 
         return null; //varsHashMap.get(ctx.VARNAME(0).getText());
     }
 
-}
 
     @Override
     public Var visitDeclarationDouble(robotControlParser.DeclarationDoubleContext ctx) {
@@ -221,7 +263,7 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
                     " is already declared.");
 
         if (ctx.mathExprDouble() != null) visitMathExprDouble(ctx.mathExprDouble());
-        System.out.println("Varname 0: " + ctx.VARNAME(0).getText().toString());
+        System.out.println("Varname 0: " + ctx.VARNAME(0).getText());
         varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.DOUBLE, ctx.VARNAME(0).getText(), false));
 
         return null; //varsHashMap.get(ctx.VARNAME(0).getText());

@@ -1,8 +1,11 @@
-package gen;// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotControl.g4 by ANTLR 4.7
+// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5/gen/gen\robotControl.g4 by ANTLR 4.7
+package gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
-
-
+/**
+ * This interface defines a complete listener for a parse tree produced by
+ * {@link robotControlParser}.
+ */
 public interface robotControlListener extends ParseTreeListener {
 	/**
 	 * Enter a parse tree produced by {@link robotControlParser#script}.
@@ -214,4 +217,44 @@ public interface robotControlListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVarType(robotControlParser.VarTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varInt}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarInt(robotControlParser.VarIntContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varInt}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarInt(robotControlParser.VarIntContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varDouble}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarDouble(robotControlParser.VarDoubleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varDouble}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarDouble(robotControlParser.VarDoubleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varRobot}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarRobot(robotControlParser.VarRobotContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varRobot}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarRobot(robotControlParser.VarRobotContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varName}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarName(robotControlParser.VarNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varName}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarName(robotControlParser.VarNameContext ctx);
 }

@@ -1,4 +1,4 @@
-// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotControl.g4 by ANTLR 4.7
+// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5/gen/gen\robotControl.g4 by ANTLR 4.7
 package gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -136,4 +136,28 @@ public interface robotControlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVarType(robotControlParser.VarTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link robotControlParser#varInt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarInt(robotControlParser.VarIntContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link robotControlParser#varDouble}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarDouble(robotControlParser.VarDoubleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link robotControlParser#varRobot}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarRobot(robotControlParser.VarRobotContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link robotControlParser#varName}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarName(robotControlParser.VarNameContext ctx);
 }

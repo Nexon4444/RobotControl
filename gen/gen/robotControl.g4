@@ -10,7 +10,7 @@ ifStment
 ;
 
 whileStment
-: WHILE LNBRACKET (expr|mathExpr) RNBRACKET LCBRACKET stment* RCBRACKET
+: WHILE LNBRACKET expr RNBRACKET LCBRACKET stment* RCBRACKET
 ;
 
 stment
@@ -24,7 +24,7 @@ stment
 ;
 
 robotStmentDouble
-: VARNAME DOT (LEFT | RIGHT | FRONT | BACK) LNBRACKET DOUBLE RNBRACKET SEMICOLON
+: VARNAME DOT (LEFT | RIGHT | FRONT | BACK) LNBRACKET (VARNAME|mathExprDouble|DOUBLE) RNBRACKET SEMICOLON
 ;
 
 robotStmentInt:
@@ -45,7 +45,7 @@ mathExprDouble
 ;
 
 expr
-: mathExpr relOp mathExpr
+: mathExprInt relOp mathExprInt
 ;
 
 declaration
@@ -87,7 +87,7 @@ assignementString
 ;
 
 initiailizeRobot
-: VARROBOT VARNAME LNBRACKET STRING RNBRACKET SEMICOLON
+: VARROBOT VARNAME LNBRACKET (STRING|VARNAME) RNBRACKET SEMICOLON
 ;
 
 assignementDouble
@@ -157,7 +157,7 @@ INT: ('0'|'-'?[1-9][0-9]*);
 VARNAME: [a-zA-Z]([a-zA-Z]|INT)*;
 STRING: '"'.+?'"';
 DOUBLE: ([0-9]*'.'[0-9]);
-WHITESPACE: ' ' -> skip ;
+WHITESPACE: (' ' | [\n\t\r]) -> skip ;
 COMMENT:  '//' ~( '\r' | '\n' )*  -> skip;
 
 /*grammar robotControl;

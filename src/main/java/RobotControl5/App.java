@@ -20,18 +20,17 @@ public class App
         System.out.println("tokenSteam: " + tokenStream.toString());
         robotControlParser robotControlParser = new robotControlParser(tokenStream);
 
-        JFrame frame = new JFrame("RobotControl Tree");
-        JPanel panel = new JPanel();
-        TreeViewer viewr = new TreeViewer(Arrays.asList(robotControlParser.getRuleNames()), robotControlParser.script());
-        viewr.setScale(2.5);
-        panel.add(viewr);
-        frame.add(new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 200);
-        frame.setVisible(true);
+//        JFrame frame = new JFrame("RobotControl Tree");
+//        JPanel panel = new JPanel();
+//        TreeViewer viewr = new TreeViewer(Arrays.asList(robotControlParser.getRuleNames()), robotControlParser.script());
+//        viewr.setScale(2.5);
+//        panel.add(viewr);
+//        frame.add(new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setSize(400, 200);
+//        frame.setVisible(true);
 
         RobotControlVisitor visitor = new RobotControlVisitor();
-        System.out.println("stment: " + robotControlParser.stment().toString());
         visitor.visit(robotControlParser.script());
     }
 
