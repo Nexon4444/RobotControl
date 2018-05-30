@@ -16,7 +16,7 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitStment(robotControlParser.StmentContext ctx) {
-        System.out.println("visited visitStment");
+//        System.out.println("visited visitStment");
         if (ctx.ifStment() != null) visitIfStment(ctx.ifStment());
         if (ctx.whileStment() != null) visitWhileStment(ctx.whileStment());
         if (ctx.robotStmentDouble() != null) visitRobotStmentDouble(ctx.robotStmentDouble());
@@ -29,10 +29,10 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitScript(robotControlParser.ScriptContext ctx) {
-        System.out.println("visited ctx: " + ctx);
+//        System.out.println("visited ctx: " + ctx);
         for (int i = 0; i < ctx.stment().size(); i++)
         {
-            System.out.println("ScriptContext: " + ctx.stment(i).getText());
+//            System.out.println("ScriptContext: " + ctx.stment(i).getText());
             visitStment(ctx.stment(i));
         }
 
@@ -60,14 +60,17 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitRobotStmentDouble(robotControlParser.RobotStmentDoubleContext ctx) {
-
+//        System.out.println("visited RobotStmentDoubleContext: " + ctx.getText());
         for (int i = 0; i < ctx.VARNAME().size(); i++)
             if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
 
-        for (int i = 0; i < ctx.VARNAME().size(); i++)
+        if (varsHashMap.get(ctx.VARNAME(0).getText()).getType() != Type.ROBOT)
+            throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(0) + " is not of type " + Type.ROBOT.toString());
+
+        for (int i = 1; i < ctx.VARNAME().size(); i++)
             if (varsHashMap.get(ctx.VARNAME(i).getText()).getType() != Type.DOUBLE)
-                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.INT.toString());
+                throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.DOUBLE.toString());
 
         if (ctx.mathExprDouble() != null) visitMathExprDouble(ctx.mathExprDouble());
         return null;
@@ -79,7 +82,10 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
             if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
 
-        for (int i = 0; i < ctx.VARNAME().size(); i++)
+        if (varsHashMap.get(ctx.VARNAME(0).getText()).getType() != Type.ROBOT)
+            throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(0) + " is not of type " + Type.ROBOT.toString());
+
+        for (int i = 1; i < ctx.VARNAME().size(); i++)
             if (varsHashMap.get(ctx.VARNAME(i).getText()).getType() != Type.INT)
                 throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME(i) + " is not of type " + Type.INT.toString());
 
@@ -97,13 +103,10 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
 
     @Override
     public Var visitMathExprInt(robotControlParser.MathExprIntContext ctx) {
-        System.out.println("MathExprIntContext: " + ctx.getText());
         for (int i = 0; i < ctx.VARNAME().size(); i++)
             if (!varsHashMap.containsKey(ctx.VARNAME(i).getText()))
-            {
-                System.out.println(ctx.VARNAME(i).getText());
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
-            }
+
 
 
         for (int i = 0; i < ctx.VARNAME().size(); i++)
@@ -164,7 +167,7 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
                 throw new VariableUndeclaredException("Variable " + ctx.VARNAME(i) + " undeclared");
 
         if (ctx.mathExprInt() != null) visitMathExprInt(ctx.mathExprInt());
-        System.out.println("Varname 0: " + ctx.VARNAME(0).getText().toString());
+//        System.out.println("Varname 0: " + ctx.VARNAME(0).getText().toString());
 //        varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.INT, ctx.VARNAME(0).getText(), false));
 
         return null; //varsHashMap.get(ctx.VARNAME(0).getText());
@@ -182,13 +185,16 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
     @Override
     public Var visitInitiailizeRobot(robotControlParser.InitiailizeRobotContext ctx) {
 
-        if (varsHashMap.containsKey(ctx.VARNAME().getText()))
-            throw new MultipleVariableDeclarationException("Variable: " + ctx.VARNAME().getText() +
+        if (varsHashMap.containsKey(ctx.VARNAME(0).getText()))
+            throw new MultipleVariableDeclarationException("Variable: " + ctx.VARNAME(0).getText() +
                     " is already declared.");
         System.out.println("InitiailizeRobotContext.VARNAME: " + ctx.VARNAME());
-        if (ctx.VARNAME()!= null)
-            if (varsHashMap.get(ctx.VARNAME().getText()).getType() != Type.STRING)
+        if (ctx.VARNAME(1)!= null)
+            if (varsHashMap.get(ctx.VARNAME(1).getText()).getType() != Type.STRING)
                 throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME() + " is not of type " + Type.STRING.toString());
+
+        varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.ROBOT, ctx.VARNAME(0).getText(), false));
+
         return null;
     }
 
@@ -263,7 +269,7 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
                     " is already declared.");
 
         if (ctx.mathExprDouble() != null) visitMathExprDouble(ctx.mathExprDouble());
-        System.out.println("Varname 0: " + ctx.VARNAME(0).getText());
+//        System.out.println("Varname 0: " + ctx.VARNAME(0).getText());
         varsHashMap.put(ctx.VARNAME(0).getText(), new Var(Type.DOUBLE, ctx.VARNAME(0).getText(), false));
 
         return null; //varsHashMap.get(ctx.VARNAME(0).getText());

@@ -1,10 +1,15 @@
 int x = 5;
 int y = x;
 double z = 4.0;
-robot r1 ("C:/User/Desktop/Script");
+robot r1("C:/User/Desktop/Script");
 while (x <5)
 {
 r1.front(z);
+r1.front(z);
 x = x + 1;
+int f = x;
+while (f <7){
+r1.right(x);
+}
 z = x + 3;
 }
