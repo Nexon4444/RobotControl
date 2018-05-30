@@ -188,7 +188,7 @@ public class RobotControlVisitor extends robotControlBaseVisitor<Var> {
         if (varsHashMap.containsKey(ctx.VARNAME(0).getText()))
             throw new MultipleVariableDeclarationException("Variable: " + ctx.VARNAME(0).getText() +
                     " is already declared.");
-        System.out.println("InitiailizeRobotContext.VARNAME: " + ctx.VARNAME());
+//        System.out.println("InitiailizeRobotContext.VARNAME: " + ctx.VARNAME());
         if (ctx.VARNAME(1)!= null)
             if (varsHashMap.get(ctx.VARNAME(1).getText()).getType() != Type.STRING)
                 throw new InvalidArgumentTypeException("Variable: " + ctx.VARNAME() + " is not of type " + Type.STRING.toString());
