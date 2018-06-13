@@ -9,6 +9,9 @@ ifStment
 | (IF LNBRACKET expr RNBRACKET LCBRACKET stment* RCBRACKET ELSE LCBRACKET stment* RCBRACKET)
 ;
 
+//instructions
+//: (LNBRACKET stment+ RNBRACKET) | stment;
+
 whileStment
 : WHILE LNBRACKET expr RNBRACKET LCBRACKET stment* RCBRACKET
 ;
@@ -28,7 +31,7 @@ robotStmentDouble
 ;
 
 robotStmentInt:
- VARNAME DOT SETSPEED LNBRACKET (mathExpr|VARNAME) RNBRACKET SEMICOLON
+ VARNAME DOT SETSPEED LNBRACKET (mathExprInt|VARNAME) RNBRACKET SEMICOLON
  ;
 
 mathExpr

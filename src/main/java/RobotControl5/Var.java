@@ -7,12 +7,24 @@ public class Var implements Comparable<Var> {
     private Type type;
     private String value;
     private Boolean isNull;
-
+    public Var(Type type, String value) {
+        this.type = type;
+        this.value = value;
+        this.isNull = false;
+    }
     public Var(Type type, String value, Boolean isNull) {
         this.type = type;
         this.value = value;
         this.isNull = isNull;
     }
+
+/*
+    public Var() {
+        this.type = null;
+        this.value = null;
+        this.isNull = true;
+    }
+*/
 
     @Override
     public int compareTo(Var v) {
@@ -53,5 +65,10 @@ public class Var implements Comparable<Var> {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return new String("Type: " + type + ", Value: " + value + ", isNull: " + isNull);
     }
 }
