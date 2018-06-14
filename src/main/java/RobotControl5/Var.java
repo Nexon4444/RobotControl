@@ -34,13 +34,18 @@ public class Var implements Comparable<Var> {
             } catch (RobotControlException e) {
                 e.printStackTrace();
             }
-        if (this.getValue().equals(v.getValue()) || this.getNull().equals(v.getNull()))
+        if (this.getValue().equals(v.getValue()) /*|| this.getNull().equals(v.getNull())*/)
             return 0;
         if (this.getType().equals(Type.INT)) {
-            return Integer.compare(Integer.valueOf(this.getValue()), Integer.valueOf(v.getValue()));
-        } else {
-            return -1;
+            Integer i1 = Integer.parseInt(this.getValue());
+            Integer i2 = Integer.parseInt(v.getValue());
+            return i1.compareTo(i2);
+        } else if (this.getType().equals(Type.DOUBLE)) {
+            Double d1 = Double.parseDouble(this.getValue());
+            Double d2 = Double.parseDouble(v.getValue());
+            return (d1.compareTo(d2));
         }
+        return -1;
     }
 
     public Boolean getNull() {

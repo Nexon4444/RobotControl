@@ -173,15 +173,15 @@ public class robotControlParser extends Parser {
 		public TerminalNode LCBRACKET(int i) {
 			return getToken(robotControlParser.LCBRACKET, i);
 		}
+		public List<ScriptContext> script() {
+			return getRuleContexts(ScriptContext.class);
+		}
+		public ScriptContext script(int i) {
+			return getRuleContext(ScriptContext.class,i);
+		}
 		public List<TerminalNode> RCBRACKET() { return getTokens(robotControlParser.RCBRACKET); }
 		public TerminalNode RCBRACKET(int i) {
 			return getToken(robotControlParser.RCBRACKET, i);
-		}
-		public List<StmentContext> stment() {
-			return getRuleContexts(StmentContext.class);
-		}
-		public StmentContext stment(int i) {
-			return getRuleContext(StmentContext.class,i);
 		}
 		public TerminalNode ELSE() { return getToken(robotControlParser.ELSE, 0); }
 		public IfStmentContext(ParserRuleContext parent, int invokingState) {
@@ -206,11 +206,10 @@ public class robotControlParser extends Parser {
 	public final IfStmentContext ifStment() throws RecognitionException {
 		IfStmentContext _localctx = new IfStmentContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_ifStment);
-		int _la;
 		try {
-			setState(91);
+			setState(76);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
@@ -225,21 +224,9 @@ public class robotControlParser extends Parser {
 				match(RNBRACKET);
 				setState(60);
 				match(LCBRACKET);
-				setState(64);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
-					{
-					{
-					setState(61);
-					stment();
-					}
-					}
-					setState(66);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(67);
+				setState(61);
+				script();
+				setState(62);
 				match(RCBRACKET);
 				}
 				}
@@ -248,51 +235,27 @@ public class robotControlParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				{
-				setState(69);
+				setState(64);
 				match(IF);
-				setState(70);
+				setState(65);
 				match(LNBRACKET);
-				setState(71);
+				setState(66);
 				expr();
-				setState(72);
+				setState(67);
 				match(RNBRACKET);
-				setState(73);
+				setState(68);
 				match(LCBRACKET);
-				setState(77);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
-					{
-					{
-					setState(74);
-					stment();
-					}
-					}
-					setState(79);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(80);
+				setState(69);
+				script();
+				setState(70);
 				match(RCBRACKET);
-				setState(81);
+				setState(71);
 				match(ELSE);
-				setState(82);
+				setState(72);
 				match(LCBRACKET);
-				setState(86);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
-					{
-					{
-					setState(83);
-					stment();
-					}
-					}
-					setState(88);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(89);
+				setState(73);
+				script();
+				setState(74);
 				match(RCBRACKET);
 				}
 				}
@@ -318,13 +281,10 @@ public class robotControlParser extends Parser {
 		}
 		public TerminalNode RNBRACKET() { return getToken(robotControlParser.RNBRACKET, 0); }
 		public TerminalNode LCBRACKET() { return getToken(robotControlParser.LCBRACKET, 0); }
+		public ScriptContext script() {
+			return getRuleContext(ScriptContext.class,0);
+		}
 		public TerminalNode RCBRACKET() { return getToken(robotControlParser.RCBRACKET, 0); }
-		public List<StmentContext> stment() {
-			return getRuleContexts(StmentContext.class);
-		}
-		public StmentContext stment(int i) {
-			return getRuleContext(StmentContext.class,i);
-		}
 		public WhileStmentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -347,35 +307,22 @@ public class robotControlParser extends Parser {
 	public final WhileStmentContext whileStment() throws RecognitionException {
 		WhileStmentContext _localctx = new WhileStmentContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_whileStment);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(93);
+			setState(78);
 			match(WHILE);
-			setState(94);
+			setState(79);
 			match(LNBRACKET);
-			setState(95);
+			setState(80);
 			expr();
-			setState(96);
+			setState(81);
 			match(RNBRACKET);
-			setState(97);
+			setState(82);
 			match(LCBRACKET);
-			setState(101);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE) | (1L << VARNAME))) != 0)) {
-				{
-				{
-				setState(98);
-				stment();
-				}
-				}
-				setState(103);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(104);
+			setState(83);
+			script();
+			setState(84);
 			match(RCBRACKET);
 			}
 		}
@@ -435,55 +382,55 @@ public class robotControlParser extends Parser {
 		StmentContext _localctx = new StmentContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_stment);
 		try {
-			setState(113);
+			setState(93);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(106);
+				setState(86);
 				ifStment();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(107);
+				setState(87);
 				whileStment();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(108);
+				setState(88);
 				robotStmentDouble();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(109);
+				setState(89);
 				robotStmentInt();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(110);
+				setState(90);
 				assignement();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(111);
+				setState(91);
 				declaration();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(112);
+				setState(92);
 				initiailizeRobot();
 				}
 				break;
@@ -543,11 +490,11 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(115);
+			setState(95);
 			match(VARNAME);
-			setState(116);
+			setState(96);
 			match(DOT);
-			setState(117);
+			setState(97);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LEFT) | (1L << RIGHT) | (1L << FRONT) | (1L << BACK))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -557,33 +504,33 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(118);
+			setState(98);
 			match(LNBRACKET);
-			setState(122);
+			setState(102);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				{
-				setState(119);
+				setState(99);
 				match(VARNAME);
 				}
 				break;
 			case 2:
 				{
-				setState(120);
+				setState(100);
 				mathExprDouble();
 				}
 				break;
 			case 3:
 				{
-				setState(121);
+				setState(101);
 				match(DOUBLE);
 				}
 				break;
 			}
-			setState(124);
+			setState(104);
 			match(RNBRACKET);
-			setState(125);
+			setState(105);
 			match(SEMICOLON);
 			}
 		}
@@ -608,8 +555,8 @@ public class robotControlParser extends Parser {
 		public TerminalNode LNBRACKET() { return getToken(robotControlParser.LNBRACKET, 0); }
 		public TerminalNode RNBRACKET() { return getToken(robotControlParser.RNBRACKET, 0); }
 		public TerminalNode SEMICOLON() { return getToken(robotControlParser.SEMICOLON, 0); }
-		public MathExprContext mathExpr() {
-			return getRuleContext(MathExprContext.class,0);
+		public MathExprIntContext mathExprInt() {
+			return getRuleContext(MathExprIntContext.class,0);
 		}
 		public RobotStmentIntContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -636,33 +583,33 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(127);
+			setState(107);
 			match(VARNAME);
-			setState(128);
+			setState(108);
 			match(DOT);
-			setState(129);
+			setState(109);
 			match(SETSPEED);
-			setState(130);
+			setState(110);
 			match(LNBRACKET);
-			setState(133);
+			setState(113);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				{
-				setState(131);
-				mathExpr();
+				setState(111);
+				mathExprInt();
 				}
 				break;
 			case 2:
 				{
-				setState(132);
+				setState(112);
 				match(VARNAME);
 				}
 				break;
 			}
-			setState(135);
+			setState(115);
 			match(RNBRACKET);
-			setState(136);
+			setState(116);
 			match(SEMICOLON);
 			}
 		}
@@ -707,20 +654,20 @@ public class robotControlParser extends Parser {
 		MathExprContext _localctx = new MathExprContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_mathExpr);
 		try {
-			setState(140);
+			setState(120);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(138);
+				setState(118);
 				mathExprDouble();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(139);
+				setState(119);
 				mathExprInt();
 				}
 				break;
@@ -788,7 +735,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(142);
+			setState(122);
 			_la = _input.LA(1);
 			if ( !(_la==INT || _la==VARNAME) ) {
 			_errHandler.recoverInline(this);
@@ -798,13 +745,13 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(147);
+			setState(127);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) {
 				{
 				{
-				setState(143);
+				setState(123);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) ) {
 				_errHandler.recoverInline(this);
@@ -814,7 +761,7 @@ public class robotControlParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(144);
+				setState(124);
 				_la = _input.LA(1);
 				if ( !(_la==INT || _la==VARNAME) ) {
 				_errHandler.recoverInline(this);
@@ -826,7 +773,7 @@ public class robotControlParser extends Parser {
 				}
 				}
 				}
-				setState(149);
+				setState(129);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -894,7 +841,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(150);
+			setState(130);
 			_la = _input.LA(1);
 			if ( !(_la==VARNAME || _la==DOUBLE) ) {
 			_errHandler.recoverInline(this);
@@ -904,13 +851,13 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(155);
+			setState(135);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) {
 				{
 				{
-				setState(151);
+				setState(131);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPPLUS) | (1L << OPMINUS) | (1L << OPMUL) | (1L << OPDIV))) != 0)) ) {
 				_errHandler.recoverInline(this);
@@ -920,7 +867,7 @@ public class robotControlParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(152);
+				setState(132);
 				_la = _input.LA(1);
 				if ( !(_la==VARNAME || _la==DOUBLE) ) {
 				_errHandler.recoverInline(this);
@@ -932,7 +879,7 @@ public class robotControlParser extends Parser {
 				}
 				}
 				}
-				setState(157);
+				setState(137);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -984,11 +931,11 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(158);
+			setState(138);
 			mathExprInt();
-			setState(159);
+			setState(139);
 			relOp();
-			setState(160);
+			setState(140);
 			mathExprInt();
 			}
 		}
@@ -1036,27 +983,27 @@ public class robotControlParser extends Parser {
 		DeclarationContext _localctx = new DeclarationContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_declaration);
 		try {
-			setState(165);
+			setState(145);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case VARINT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(162);
+				setState(142);
 				declarationInt();
 				}
 				break;
 			case VARSTRING:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(163);
+				setState(143);
 				declarationString();
 				}
 				break;
 			case VARDOUBLE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(164);
+				setState(144);
 				declarationDouble();
 				}
 				break;
@@ -1109,36 +1056,36 @@ public class robotControlParser extends Parser {
 		DeclarationIntContext _localctx = new DeclarationIntContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_declarationInt);
 		try {
-			setState(178);
+			setState(158);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(167);
+				setState(147);
 				match(VARINT);
-				setState(168);
+				setState(148);
 				match(VARNAME);
-				setState(169);
+				setState(149);
 				match(OPASSIGN);
-				setState(170);
+				setState(150);
 				mathExprInt();
-				setState(171);
+				setState(151);
 				match(SEMICOLON);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(173);
+				setState(153);
 				match(VARINT);
-				setState(174);
+				setState(154);
 				match(VARNAME);
-				setState(175);
+				setState(155);
 				match(OPASSIGN);
-				setState(176);
+				setState(156);
 				match(VARNAME);
-				setState(177);
+				setState(157);
 				match(SEMICOLON);
 				}
 				break;
@@ -1186,15 +1133,15 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(180);
+			setState(160);
 			match(VARSTRING);
-			setState(181);
+			setState(161);
 			match(VARNAME);
-			setState(182);
+			setState(162);
 			match(OPASSIGN);
-			setState(183);
+			setState(163);
 			match(STRING);
-			setState(184);
+			setState(164);
 			match(SEMICOLON);
 			}
 		}
@@ -1243,36 +1190,36 @@ public class robotControlParser extends Parser {
 		DeclarationDoubleContext _localctx = new DeclarationDoubleContext(_ctx, getState());
 		enterRule(_localctx, 26, RULE_declarationDouble);
 		try {
-			setState(197);
+			setState(177);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(186);
+				setState(166);
 				match(VARDOUBLE);
-				setState(187);
+				setState(167);
 				match(VARNAME);
-				setState(188);
+				setState(168);
 				match(OPASSIGN);
-				setState(189);
+				setState(169);
 				mathExprDouble();
-				setState(190);
+				setState(170);
 				match(SEMICOLON);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(192);
+				setState(172);
 				match(VARDOUBLE);
-				setState(193);
+				setState(173);
 				match(VARNAME);
-				setState(194);
+				setState(174);
 				match(OPASSIGN);
-				setState(195);
+				setState(175);
 				match(VARNAME);
-				setState(196);
+				setState(176);
 				match(SEMICOLON);
 				}
 				break;
@@ -1322,27 +1269,27 @@ public class robotControlParser extends Parser {
 		AssignementContext _localctx = new AssignementContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_assignement);
 		try {
-			setState(202);
+			setState(182);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(199);
+				setState(179);
 				assignementDouble();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(200);
+				setState(180);
 				assignementString();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(201);
+				setState(181);
 				assignementInt();
 				}
 				break;
@@ -1392,32 +1339,32 @@ public class robotControlParser extends Parser {
 		AssignementIntContext _localctx = new AssignementIntContext(_ctx, getState());
 		enterRule(_localctx, 30, RULE_assignementInt);
 		try {
-			setState(213);
+			setState(193);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(204);
+				setState(184);
 				match(VARNAME);
-				setState(205);
+				setState(185);
 				match(OPASSIGN);
-				setState(206);
+				setState(186);
 				mathExprInt();
-				setState(207);
+				setState(187);
 				match(SEMICOLON);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(209);
+				setState(189);
 				match(VARNAME);
-				setState(210);
+				setState(190);
 				match(OPASSIGN);
-				setState(211);
+				setState(191);
 				match(VARNAME);
-				setState(212);
+				setState(192);
 				match(SEMICOLON);
 				}
 				break;
@@ -1464,13 +1411,13 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(215);
+			setState(195);
 			match(VARNAME);
-			setState(216);
+			setState(196);
 			match(OPASSIGN);
-			setState(217);
+			setState(197);
 			match(STRING);
-			setState(218);
+			setState(198);
 			match(SEMICOLON);
 			}
 		}
@@ -1521,13 +1468,13 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(220);
+			setState(200);
 			match(VARROBOT);
-			setState(221);
+			setState(201);
 			match(VARNAME);
-			setState(222);
+			setState(202);
 			match(LNBRACKET);
-			setState(223);
+			setState(203);
 			_la = _input.LA(1);
 			if ( !(_la==VARNAME || _la==STRING) ) {
 			_errHandler.recoverInline(this);
@@ -1537,9 +1484,9 @@ public class robotControlParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(224);
+			setState(204);
 			match(RNBRACKET);
-			setState(225);
+			setState(205);
 			match(SEMICOLON);
 			}
 		}
@@ -1587,32 +1534,32 @@ public class robotControlParser extends Parser {
 		AssignementDoubleContext _localctx = new AssignementDoubleContext(_ctx, getState());
 		enterRule(_localctx, 36, RULE_assignementDouble);
 		try {
-			setState(236);
+			setState(216);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(227);
+				setState(207);
 				match(VARNAME);
-				setState(228);
+				setState(208);
 				match(OPASSIGN);
-				setState(229);
+				setState(209);
 				mathExprDouble();
-				setState(230);
+				setState(210);
 				match(SEMICOLON);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(232);
+				setState(212);
 				match(VARNAME);
-				setState(233);
+				setState(213);
 				match(OPASSIGN);
-				setState(234);
+				setState(214);
 				match(VARNAME);
-				setState(235);
+				setState(215);
 				match(SEMICOLON);
 				}
 				break;
@@ -1659,7 +1606,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(238);
+			setState(218);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPGREATER) | (1L << OPSMALLER) | (1L << OPEQUAL))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1713,7 +1660,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(240);
+			setState(220);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VARINT) | (1L << VARROBOT) | (1L << VARSTRING) | (1L << VARDOUBLE))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1763,7 +1710,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(242);
+			setState(222);
 			match(VARINT);
 			}
 		}
@@ -1805,7 +1752,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(244);
+			setState(224);
 			match(VARDOUBLE);
 			}
 		}
@@ -1847,7 +1794,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(246);
+			setState(226);
 			match(VARROBOT);
 			}
 		}
@@ -1889,7 +1836,7 @@ public class robotControlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(248);
+			setState(228);
 			match(VARNAME);
 			}
 		}
@@ -1905,85 +1852,76 @@ public class robotControlParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3$\u00fd\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3$\u00e9\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
-		"\4\32\t\32\3\2\7\2\66\n\2\f\2\16\29\13\2\3\3\3\3\3\3\3\3\3\3\3\3\7\3A"+
-		"\n\3\f\3\16\3D\13\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3N\n\3\f\3\16\3"+
-		"Q\13\3\3\3\3\3\3\3\3\3\7\3W\n\3\f\3\16\3Z\13\3\3\3\3\3\5\3^\n\3\3\4\3"+
-		"\4\3\4\3\4\3\4\3\4\7\4f\n\4\f\4\16\4i\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5"+
-		"\3\5\3\5\5\5t\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6}\n\6\3\6\3\6\3\6\3\7"+
-		"\3\7\3\7\3\7\3\7\3\7\5\7\u0088\n\7\3\7\3\7\3\7\3\b\3\b\5\b\u008f\n\b\3"+
-		"\t\3\t\3\t\7\t\u0094\n\t\f\t\16\t\u0097\13\t\3\n\3\n\3\n\7\n\u009c\n\n"+
-		"\f\n\16\n\u009f\13\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f\u00a8\n\f\3\r"+
-		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\r\u00b5\n\r\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
-		"\5\17\u00c8\n\17\3\20\3\20\3\20\5\20\u00cd\n\20\3\21\3\21\3\21\3\21\3"+
-		"\21\3\21\3\21\3\21\3\21\5\21\u00d8\n\21\3\22\3\22\3\22\3\22\3\22\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24"+
-		"\3\24\5\24\u00ef\n\24\3\25\3\25\3\26\3\26\3\27\3\27\3\30\3\30\3\31\3\31"+
-		"\3\32\3\32\3\32\2\2\33\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,"+
-		".\60\62\2\t\3\2\7\n\3\2\37 \3\2\21\24\4\2  \"\"\3\2 !\3\2\25\27\3\2\32"+
-		"\35\2\u00fd\2\67\3\2\2\2\4]\3\2\2\2\6_\3\2\2\2\bs\3\2\2\2\nu\3\2\2\2\f"+
-		"\u0081\3\2\2\2\16\u008e\3\2\2\2\20\u0090\3\2\2\2\22\u0098\3\2\2\2\24\u00a0"+
-		"\3\2\2\2\26\u00a7\3\2\2\2\30\u00b4\3\2\2\2\32\u00b6\3\2\2\2\34\u00c7\3"+
-		"\2\2\2\36\u00cc\3\2\2\2 \u00d7\3\2\2\2\"\u00d9\3\2\2\2$\u00de\3\2\2\2"+
-		"&\u00ee\3\2\2\2(\u00f0\3\2\2\2*\u00f2\3\2\2\2,\u00f4\3\2\2\2.\u00f6\3"+
-		"\2\2\2\60\u00f8\3\2\2\2\62\u00fa\3\2\2\2\64\66\5\b\5\2\65\64\3\2\2\2\66"+
-		"9\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28\3\3\2\2\29\67\3\2\2\2:;\7\4\2\2;"+
-		"<\7\r\2\2<=\5\24\13\2=>\7\16\2\2>B\7\13\2\2?A\5\b\5\2@?\3\2\2\2AD\3\2"+
-		"\2\2B@\3\2\2\2BC\3\2\2\2CE\3\2\2\2DB\3\2\2\2EF\7\f\2\2F^\3\2\2\2GH\7\4"+
-		"\2\2HI\7\r\2\2IJ\5\24\13\2JK\7\16\2\2KO\7\13\2\2LN\5\b\5\2ML\3\2\2\2N"+
-		"Q\3\2\2\2OM\3\2\2\2OP\3\2\2\2PR\3\2\2\2QO\3\2\2\2RS\7\f\2\2ST\7\5\2\2"+
-		"TX\7\13\2\2UW\5\b\5\2VU\3\2\2\2WZ\3\2\2\2XV\3\2\2\2XY\3\2\2\2Y[\3\2\2"+
-		"\2ZX\3\2\2\2[\\\7\f\2\2\\^\3\2\2\2]:\3\2\2\2]G\3\2\2\2^\5\3\2\2\2_`\7"+
-		"\6\2\2`a\7\r\2\2ab\5\24\13\2bc\7\16\2\2cg\7\13\2\2df\5\b\5\2ed\3\2\2\2"+
-		"fi\3\2\2\2ge\3\2\2\2gh\3\2\2\2hj\3\2\2\2ig\3\2\2\2jk\7\f\2\2k\7\3\2\2"+
-		"\2lt\5\4\3\2mt\5\6\4\2nt\5\n\6\2ot\5\f\7\2pt\5\36\20\2qt\5\26\f\2rt\5"+
-		"$\23\2sl\3\2\2\2sm\3\2\2\2sn\3\2\2\2so\3\2\2\2sp\3\2\2\2sq\3\2\2\2sr\3"+
-		"\2\2\2t\t\3\2\2\2uv\7 \2\2vw\7\3\2\2wx\t\2\2\2x|\7\r\2\2y}\7 \2\2z}\5"+
-		"\22\n\2{}\7\"\2\2|y\3\2\2\2|z\3\2\2\2|{\3\2\2\2}~\3\2\2\2~\177\7\16\2"+
-		"\2\177\u0080\7\31\2\2\u0080\13\3\2\2\2\u0081\u0082\7 \2\2\u0082\u0083"+
-		"\7\3\2\2\u0083\u0084\7\36\2\2\u0084\u0087\7\r\2\2\u0085\u0088\5\16\b\2"+
-		"\u0086\u0088\7 \2\2\u0087\u0085\3\2\2\2\u0087\u0086\3\2\2\2\u0088\u0089"+
-		"\3\2\2\2\u0089\u008a\7\16\2\2\u008a\u008b\7\31\2\2\u008b\r\3\2\2\2\u008c"+
-		"\u008f\5\22\n\2\u008d\u008f\5\20\t\2\u008e\u008c\3\2\2\2\u008e\u008d\3"+
-		"\2\2\2\u008f\17\3\2\2\2\u0090\u0095\t\3\2\2\u0091\u0092\t\4\2\2\u0092"+
-		"\u0094\t\3\2\2\u0093\u0091\3\2\2\2\u0094\u0097\3\2\2\2\u0095\u0093\3\2"+
-		"\2\2\u0095\u0096\3\2\2\2\u0096\21\3\2\2\2\u0097\u0095\3\2\2\2\u0098\u009d"+
-		"\t\5\2\2\u0099\u009a\t\4\2\2\u009a\u009c\t\5\2\2\u009b\u0099\3\2\2\2\u009c"+
-		"\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009d\u009e\3\2\2\2\u009e\23\3\2\2"+
-		"\2\u009f\u009d\3\2\2\2\u00a0\u00a1\5\20\t\2\u00a1\u00a2\5(\25\2\u00a2"+
-		"\u00a3\5\20\t\2\u00a3\25\3\2\2\2\u00a4\u00a8\5\30\r\2\u00a5\u00a8\5\32"+
-		"\16\2\u00a6\u00a8\5\34\17\2\u00a7\u00a4\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a7"+
-		"\u00a6\3\2\2\2\u00a8\27\3\2\2\2\u00a9\u00aa\7\32\2\2\u00aa\u00ab\7 \2"+
-		"\2\u00ab\u00ac\7\30\2\2\u00ac\u00ad\5\20\t\2\u00ad\u00ae\7\31\2\2\u00ae"+
-		"\u00b5\3\2\2\2\u00af\u00b0\7\32\2\2\u00b0\u00b1\7 \2\2\u00b1\u00b2\7\30"+
-		"\2\2\u00b2\u00b3\7 \2\2\u00b3\u00b5\7\31\2\2\u00b4\u00a9\3\2\2\2\u00b4"+
-		"\u00af\3\2\2\2\u00b5\31\3\2\2\2\u00b6\u00b7\7\34\2\2\u00b7\u00b8\7 \2"+
-		"\2\u00b8\u00b9\7\30\2\2\u00b9\u00ba\7!\2\2\u00ba\u00bb\7\31\2\2\u00bb"+
-		"\33\3\2\2\2\u00bc\u00bd\7\35\2\2\u00bd\u00be\7 \2\2\u00be\u00bf\7\30\2"+
-		"\2\u00bf\u00c0\5\22\n\2\u00c0\u00c1\7\31\2\2\u00c1\u00c8\3\2\2\2\u00c2"+
-		"\u00c3\7\35\2\2\u00c3\u00c4\7 \2\2\u00c4\u00c5\7\30\2\2\u00c5\u00c6\7"+
-		" \2\2\u00c6\u00c8\7\31\2\2\u00c7\u00bc\3\2\2\2\u00c7\u00c2\3\2\2\2\u00c8"+
-		"\35\3\2\2\2\u00c9\u00cd\5&\24\2\u00ca\u00cd\5\"\22\2\u00cb\u00cd\5 \21"+
-		"\2\u00cc\u00c9\3\2\2\2\u00cc\u00ca\3\2\2\2\u00cc\u00cb\3\2\2\2\u00cd\37"+
-		"\3\2\2\2\u00ce\u00cf\7 \2\2\u00cf\u00d0\7\30\2\2\u00d0\u00d1\5\20\t\2"+
-		"\u00d1\u00d2\7\31\2\2\u00d2\u00d8\3\2\2\2\u00d3\u00d4\7 \2\2\u00d4\u00d5"+
-		"\7\30\2\2\u00d5\u00d6\7 \2\2\u00d6\u00d8\7\31\2\2\u00d7\u00ce\3\2\2\2"+
-		"\u00d7\u00d3\3\2\2\2\u00d8!\3\2\2\2\u00d9\u00da\7 \2\2\u00da\u00db\7\30"+
-		"\2\2\u00db\u00dc\7!\2\2\u00dc\u00dd\7\31\2\2\u00dd#\3\2\2\2\u00de\u00df"+
-		"\7\33\2\2\u00df\u00e0\7 \2\2\u00e0\u00e1\7\r\2\2\u00e1\u00e2\t\6\2\2\u00e2"+
-		"\u00e3\7\16\2\2\u00e3\u00e4\7\31\2\2\u00e4%\3\2\2\2\u00e5\u00e6\7 \2\2"+
-		"\u00e6\u00e7\7\30\2\2\u00e7\u00e8\5\22\n\2\u00e8\u00e9\7\31\2\2\u00e9"+
-		"\u00ef\3\2\2\2\u00ea\u00eb\7 \2\2\u00eb\u00ec\7\30\2\2\u00ec\u00ed\7 "+
-		"\2\2\u00ed\u00ef\7\31\2\2\u00ee\u00e5\3\2\2\2\u00ee\u00ea\3\2\2\2\u00ef"+
-		"\'\3\2\2\2\u00f0\u00f1\t\7\2\2\u00f1)\3\2\2\2\u00f2\u00f3\t\b\2\2\u00f3"+
-		"+\3\2\2\2\u00f4\u00f5\7\32\2\2\u00f5-\3\2\2\2\u00f6\u00f7\7\35\2\2\u00f7"+
-		"/\3\2\2\2\u00f8\u00f9\7\33\2\2\u00f9\61\3\2\2\2\u00fa\u00fb\7 \2\2\u00fb"+
-		"\63\3\2\2\2\24\67BOX]gs|\u0087\u008e\u0095\u009d\u00a7\u00b4\u00c7\u00cc"+
-		"\u00d7\u00ee";
+		"\4\32\t\32\3\2\7\2\66\n\2\f\2\16\29\13\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3O\n\3\3\4\3\4\3"+
+		"\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5`\n\5\3\6\3\6\3"+
+		"\6\3\6\3\6\3\6\3\6\5\6i\n\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7t\n"+
+		"\7\3\7\3\7\3\7\3\b\3\b\5\b{\n\b\3\t\3\t\3\t\7\t\u0080\n\t\f\t\16\t\u0083"+
+		"\13\t\3\n\3\n\3\n\7\n\u0088\n\n\f\n\16\n\u008b\13\n\3\13\3\13\3\13\3\13"+
+		"\3\f\3\f\3\f\5\f\u0094\n\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r"+
+		"\5\r\u00a1\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17"+
+		"\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u00b4\n\17\3\20\3\20\3\20\5\20\u00b9"+
+		"\n\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\5\21\u00c4\n\21\3\22"+
+		"\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24"+
+		"\3\24\3\24\3\24\3\24\3\24\3\24\5\24\u00db\n\24\3\25\3\25\3\26\3\26\3\27"+
+		"\3\27\3\30\3\30\3\31\3\31\3\32\3\32\3\32\2\2\33\2\4\6\b\n\f\16\20\22\24"+
+		"\26\30\32\34\36 \"$&(*,.\60\62\2\t\3\2\7\n\3\2\37 \3\2\21\24\4\2  \"\""+
+		"\3\2 !\3\2\25\27\3\2\32\35\2\u00e5\2\67\3\2\2\2\4N\3\2\2\2\6P\3\2\2\2"+
+		"\b_\3\2\2\2\na\3\2\2\2\fm\3\2\2\2\16z\3\2\2\2\20|\3\2\2\2\22\u0084\3\2"+
+		"\2\2\24\u008c\3\2\2\2\26\u0093\3\2\2\2\30\u00a0\3\2\2\2\32\u00a2\3\2\2"+
+		"\2\34\u00b3\3\2\2\2\36\u00b8\3\2\2\2 \u00c3\3\2\2\2\"\u00c5\3\2\2\2$\u00ca"+
+		"\3\2\2\2&\u00da\3\2\2\2(\u00dc\3\2\2\2*\u00de\3\2\2\2,\u00e0\3\2\2\2."+
+		"\u00e2\3\2\2\2\60\u00e4\3\2\2\2\62\u00e6\3\2\2\2\64\66\5\b\5\2\65\64\3"+
+		"\2\2\2\669\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28\3\3\2\2\29\67\3\2\2\2:;"+
+		"\7\4\2\2;<\7\r\2\2<=\5\24\13\2=>\7\16\2\2>?\7\13\2\2?@\5\2\2\2@A\7\f\2"+
+		"\2AO\3\2\2\2BC\7\4\2\2CD\7\r\2\2DE\5\24\13\2EF\7\16\2\2FG\7\13\2\2GH\5"+
+		"\2\2\2HI\7\f\2\2IJ\7\5\2\2JK\7\13\2\2KL\5\2\2\2LM\7\f\2\2MO\3\2\2\2N:"+
+		"\3\2\2\2NB\3\2\2\2O\5\3\2\2\2PQ\7\6\2\2QR\7\r\2\2RS\5\24\13\2ST\7\16\2"+
+		"\2TU\7\13\2\2UV\5\2\2\2VW\7\f\2\2W\7\3\2\2\2X`\5\4\3\2Y`\5\6\4\2Z`\5\n"+
+		"\6\2[`\5\f\7\2\\`\5\36\20\2]`\5\26\f\2^`\5$\23\2_X\3\2\2\2_Y\3\2\2\2_"+
+		"Z\3\2\2\2_[\3\2\2\2_\\\3\2\2\2_]\3\2\2\2_^\3\2\2\2`\t\3\2\2\2ab\7 \2\2"+
+		"bc\7\3\2\2cd\t\2\2\2dh\7\r\2\2ei\7 \2\2fi\5\22\n\2gi\7\"\2\2he\3\2\2\2"+
+		"hf\3\2\2\2hg\3\2\2\2ij\3\2\2\2jk\7\16\2\2kl\7\31\2\2l\13\3\2\2\2mn\7 "+
+		"\2\2no\7\3\2\2op\7\36\2\2ps\7\r\2\2qt\5\20\t\2rt\7 \2\2sq\3\2\2\2sr\3"+
+		"\2\2\2tu\3\2\2\2uv\7\16\2\2vw\7\31\2\2w\r\3\2\2\2x{\5\22\n\2y{\5\20\t"+
+		"\2zx\3\2\2\2zy\3\2\2\2{\17\3\2\2\2|\u0081\t\3\2\2}~\t\4\2\2~\u0080\t\3"+
+		"\2\2\177}\3\2\2\2\u0080\u0083\3\2\2\2\u0081\177\3\2\2\2\u0081\u0082\3"+
+		"\2\2\2\u0082\21\3\2\2\2\u0083\u0081\3\2\2\2\u0084\u0089\t\5\2\2\u0085"+
+		"\u0086\t\4\2\2\u0086\u0088\t\5\2\2\u0087\u0085\3\2\2\2\u0088\u008b\3\2"+
+		"\2\2\u0089\u0087\3\2\2\2\u0089\u008a\3\2\2\2\u008a\23\3\2\2\2\u008b\u0089"+
+		"\3\2\2\2\u008c\u008d\5\20\t\2\u008d\u008e\5(\25\2\u008e\u008f\5\20\t\2"+
+		"\u008f\25\3\2\2\2\u0090\u0094\5\30\r\2\u0091\u0094\5\32\16\2\u0092\u0094"+
+		"\5\34\17\2\u0093\u0090\3\2\2\2\u0093\u0091\3\2\2\2\u0093\u0092\3\2\2\2"+
+		"\u0094\27\3\2\2\2\u0095\u0096\7\32\2\2\u0096\u0097\7 \2\2\u0097\u0098"+
+		"\7\30\2\2\u0098\u0099\5\20\t\2\u0099\u009a\7\31\2\2\u009a\u00a1\3\2\2"+
+		"\2\u009b\u009c\7\32\2\2\u009c\u009d\7 \2\2\u009d\u009e\7\30\2\2\u009e"+
+		"\u009f\7 \2\2\u009f\u00a1\7\31\2\2\u00a0\u0095\3\2\2\2\u00a0\u009b\3\2"+
+		"\2\2\u00a1\31\3\2\2\2\u00a2\u00a3\7\34\2\2\u00a3\u00a4\7 \2\2\u00a4\u00a5"+
+		"\7\30\2\2\u00a5\u00a6\7!\2\2\u00a6\u00a7\7\31\2\2\u00a7\33\3\2\2\2\u00a8"+
+		"\u00a9\7\35\2\2\u00a9\u00aa\7 \2\2\u00aa\u00ab\7\30\2\2\u00ab\u00ac\5"+
+		"\22\n\2\u00ac\u00ad\7\31\2\2\u00ad\u00b4\3\2\2\2\u00ae\u00af\7\35\2\2"+
+		"\u00af\u00b0\7 \2\2\u00b0\u00b1\7\30\2\2\u00b1\u00b2\7 \2\2\u00b2\u00b4"+
+		"\7\31\2\2\u00b3\u00a8\3\2\2\2\u00b3\u00ae\3\2\2\2\u00b4\35\3\2\2\2\u00b5"+
+		"\u00b9\5&\24\2\u00b6\u00b9\5\"\22\2\u00b7\u00b9\5 \21\2\u00b8\u00b5\3"+
+		"\2\2\2\u00b8\u00b6\3\2\2\2\u00b8\u00b7\3\2\2\2\u00b9\37\3\2\2\2\u00ba"+
+		"\u00bb\7 \2\2\u00bb\u00bc\7\30\2\2\u00bc\u00bd\5\20\t\2\u00bd\u00be\7"+
+		"\31\2\2\u00be\u00c4\3\2\2\2\u00bf\u00c0\7 \2\2\u00c0\u00c1\7\30\2\2\u00c1"+
+		"\u00c2\7 \2\2\u00c2\u00c4\7\31\2\2\u00c3\u00ba\3\2\2\2\u00c3\u00bf\3\2"+
+		"\2\2\u00c4!\3\2\2\2\u00c5\u00c6\7 \2\2\u00c6\u00c7\7\30\2\2\u00c7\u00c8"+
+		"\7!\2\2\u00c8\u00c9\7\31\2\2\u00c9#\3\2\2\2\u00ca\u00cb\7\33\2\2\u00cb"+
+		"\u00cc\7 \2\2\u00cc\u00cd\7\r\2\2\u00cd\u00ce\t\6\2\2\u00ce\u00cf\7\16"+
+		"\2\2\u00cf\u00d0\7\31\2\2\u00d0%\3\2\2\2\u00d1\u00d2\7 \2\2\u00d2\u00d3"+
+		"\7\30\2\2\u00d3\u00d4\5\22\n\2\u00d4\u00d5\7\31\2\2\u00d5\u00db\3\2\2"+
+		"\2\u00d6\u00d7\7 \2\2\u00d7\u00d8\7\30\2\2\u00d8\u00d9\7 \2\2\u00d9\u00db"+
+		"\7\31\2\2\u00da\u00d1\3\2\2\2\u00da\u00d6\3\2\2\2\u00db\'\3\2\2\2\u00dc"+
+		"\u00dd\t\7\2\2\u00dd)\3\2\2\2\u00de\u00df\t\b\2\2\u00df+\3\2\2\2\u00e0"+
+		"\u00e1\7\32\2\2\u00e1-\3\2\2\2\u00e2\u00e3\7\35\2\2\u00e3/\3\2\2\2\u00e4"+
+		"\u00e5\7\33\2\2\u00e5\61\3\2\2\2\u00e6\u00e7\7 \2\2\u00e7\63\3\2\2\2\20"+
+		"\67N_hsz\u0081\u0089\u0093\u00a0\u00b3\u00b8\u00c3\u00da";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

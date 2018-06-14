@@ -15,6 +15,15 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-M1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.0.0-M1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-M1" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.oracle:javafx:2.2.3">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jfxrt.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.antlr:antlr4:4.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr-runtime:3.5.2" level="project" />

@@ -1,7 +1,4 @@
 int x = 5;
-int y = x;
-double z = 4.0;
-robot r1("C:/User/Desktop/Script");
 while (x <5)
 {
 r1.front(z);

@@ -34,6 +34,7 @@ public class App
 
         RobotControlVisitor visitor = new RobotControlVisitor();
         visitor.visit(robotControlParser.script());
+        System.out.println(visitor.varsHashMap.toString());
     }
 
 }

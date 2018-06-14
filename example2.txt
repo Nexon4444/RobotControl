@@ -1,1 +1,10 @@
-double z = 4.0;
+robot r1("text");
+int i = 0;
+while (i<5)
+{
+r1.front(10.0);
+r1.right(90.0);
+i = i + 1;
+}
+
+}
