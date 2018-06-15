@@ -1,0 +1,16 @@
+string path = "resource/robotInitialize1.txt";
+robot r1(path);
+robot r2("resource/robotInitialize2.txt");
+int i = 0;
+double d = 0.0;
+while (i<5)
+{
+r1.front(10.0);
+r1.right(90.0);
+if (i == 3) {r2.front(d);}
+else {r2.back(d);}
+i = i + 1;
+d = d + 10.0;
+}
+
+}

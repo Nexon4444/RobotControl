@@ -1,4 +1,5 @@
-package gen;// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5\robotControl.g4 by ANTLR 4.7
+// Generated from E:/Users/Maciej/Studia/TKOM/RobotControl5/gen/gen\robotControl.g4 by ANTLR 4.7
+package gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -107,6 +108,46 @@ public interface robotControlListener extends ParseTreeListener {
 	 */
 	void exitExpr(robotControlParser.ExprContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link robotControlParser#declaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaration(robotControlParser.DeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#declaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaration(robotControlParser.DeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#declarationInt}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclarationInt(robotControlParser.DeclarationIntContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#declarationInt}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclarationInt(robotControlParser.DeclarationIntContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#declarationString}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclarationString(robotControlParser.DeclarationStringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#declarationString}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclarationString(robotControlParser.DeclarationStringContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#declarationDouble}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclarationDouble(robotControlParser.DeclarationDoubleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#declarationDouble}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclarationDouble(robotControlParser.DeclarationDoubleContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link robotControlParser#assignement}.
 	 * @param ctx the parse tree
 	 */
@@ -176,6 +217,36 @@ public interface robotControlListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVarType(robotControlParser.VarTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varInt}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarInt(robotControlParser.VarIntContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varInt}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarInt(robotControlParser.VarIntContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varDouble}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarDouble(robotControlParser.VarDoubleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varDouble}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarDouble(robotControlParser.VarDoubleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link robotControlParser#varRobot}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarRobot(robotControlParser.VarRobotContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link robotControlParser#varRobot}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarRobot(robotControlParser.VarRobotContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link robotControlParser#varName}.
 	 * @param ctx the parse tree

@@ -1,0 +1,2 @@
+string x = "asd";
+string x = "qwe";
