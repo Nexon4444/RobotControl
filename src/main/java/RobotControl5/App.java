@@ -14,7 +14,7 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
 
-        CharStream charStream = fromFileName("example2.txt");
+        CharStream charStream = fromFileName("example3.txt");
         robotControlLexer rlexer = new robotControlLexer(charStream);
         TokenSource tokenSource = new ListTokenSource(rlexer.getAllTokens());
         TokenStream tokenStream = new CommonTokenStream(tokenSource);
@@ -34,7 +34,7 @@ public class App
 
         RobotControlVisitor visitor = new RobotControlVisitor();
         visitor.visit(robotControlParser.script());
-        System.out.println(visitor.varsHashMap.toString());
+//        System.out.println(visitor.varsHashMap.toString());
     }
 
 }

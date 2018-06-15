@@ -1,12 +1,18 @@
-int x = 5;
-while (x <5)
+robot r1("resource/robotInitialize2.txt");
+int x = 0;
+int f = 0;
+double z = 4.0;
+while (x <3)
 {
+
+z = 40.0;
 r1.front(z);
 r1.front(z);
 x = x + 1;
-int f = x;
-while (f <7){
-r1.right(x);
+
+while (f <2){
+r1.right(30.0);
+f = f+1;
 }
-z = x + 3;
+f = 0;
 }
