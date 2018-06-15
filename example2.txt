@@ -1,4 +1,5 @@
-robot r1("text");
+string path = "resource/robotInitialize2.txt";
+robot r1(path);
 int i = 0;
 while (i<5)
 {

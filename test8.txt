@@ -1,0 +1,3 @@
+robot r("resource/robotInitialize1.txt");
+double d = 4.0;
+r.setSpeed(d);

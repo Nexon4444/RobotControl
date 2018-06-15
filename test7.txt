@@ -1,0 +1,3 @@
+robot r("resource/robotInitialize1.txt");
+int d = 4;
+r.front(d);
